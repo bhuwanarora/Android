@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/KenBurnsView/build/intermediates/bundles/debug/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="79cc64a7367fb58c86ba879306e24c5f35ef4a3a">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/KenBurnsView/build/intermediates/pre-dexed/androidTest/debug/classes-52ff316a559939f6abfb141dda011843c53e710e.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/libs/listviewanimations_lib-core_3.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-core_3.1.0-1614c187eccde92bd4577c719835865a818de005.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/exploded-aar/android - AS/android-support-v7-appcompat/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f28b3353dd714ebd8b15268e4a8f0f6bf4a2e3f4">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-c73897e591df3f76f0b737c87f66bdc2d5e0d2d0.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/exploded-aar/android - AS/StickyListHeaders/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="44107f576033966e538b61d49751aee3d8d29cf8">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-38c53fb725e201533f99f20dc9c321c6b3cc4644.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/libs/listviewanimations_lib-core-slh_3.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a4fe703aabd23e8c287c90396514418119109dd1">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-core-slh_3.1.0-2efe0f1b9444ecf2185ac89e59314cefeb9188f0.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/libs/listviewanimations_lib-manipulation_3.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="63737e512fcd9e0ebe9bcd0bb375c2dded74116f">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-manipulation_3.1.0-bf6bb17c7e424690fbb9f6d6f3678f7c584e30c6.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/libs/universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-ed5b7150f6a6b74f2624fbe17189768d2d320914.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/exploded-aar/android - AS/android-support-v7-appcompat/unspecified/libs/android-support-v7-appcompat.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3c88b0ae4f2a995ed6957a78b5bf132986d4c538">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/android-support-v7-appcompat-827243206f4aaf5c8495ef230a5143b366e6f662.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-4468bc157befce04f53de07525394ed377a4a656.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/exploded-aar/android - AS/android-support-v7-appcompat/unspecified/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3e4e879d0b3dc11f2feb3f55e77e3b5bd82c4a28">
+        <dex dex="/Users/bhuwan/Downloads/UPDATE/android/android - AS/UIAppTemplate/build/intermediates/pre-dexed/debug/android-support-v4-b26f1553527abb53073606b42be4a1604c9fc034.jar" />
+    </item>
+
+</items>
