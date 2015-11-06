@@ -927,7 +927,7 @@ public class DummyContent {
 		return list;
 	}
 
-	public static ArrayList<NewsModel> getNewsModelList(int spaces_id){
+	public static ArrayList<NewsModel> getNewsModelList(String spaces_id){
         int skip = 0;
 
         String tag_json_obj = "json_obj_req";
@@ -941,26 +941,33 @@ public class DummyContent {
                     public void onResponse(JSONArray response) {
                         try {
                             response = response.getJSONObject(0).getJSONArray("news");
+							int len = response.length();
+							for (int i=0;i<len;i++){
+								try {
+									String name = response.getJSONObject(i).getString("name");
+									int viewCount = response.getJSONObject(i).getInt("view_count");
+									int id = response.getJSONObject(i).getInt("news_id");
+									String imageURL = response.getJSONObject(i).getString("image_url");
+									String newsURL = response.getJSONObject(i).getString("news_url");
+									int bookmarkCount = response.getJSONObject(i).getInt("bookmark_count");
+									String createdOn = response.getJSONObject(i).getString("created_at");
+									String title = response.getJSONObject(i).getString("title");
+									String description = response.getJSONObject(i).getString("description");
+
+									NewsModel newsModel = new NewsModel(id, imageURL, title, description, createdOn, viewCount, R.string.fontello_heart_empty);
+
+//                                	list.add(newsModel);
+								} catch (JSONException e) {
+									e.printStackTrace();
+								}
+							}
+							Log.d(TAG, response.toString());
                         }
                         catch (JSONException e){
-
+							e.printStackTrace();
                         }
-                        int len = response.length();
-                        for (int i=0;i<len;i++){
-                            try {
-                                String name = response.getJSONObject(i).getString("name");
-                                int view_count = response.getJSONObject(i).getInt("view_count");
-                                int id = response.getJSONObject(i).getInt("id");
-                                String image_url =  "http://rd-images.readersdoor.netdna-cdn.com/"+id+"/M.png";
-                                NewsModel newsModel = new NewsModel(i, )
-//                                list.add(newsModel);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        Log.d(TAG, response.toString());
                     }
-                }, new Response.ErrorListener() {
+				}, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -972,18 +979,6 @@ public class DummyContent {
         // Adding request to request queue
         AsyncContent.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
         return list;
-
-//
-//		list.add(new NewsModel(0, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/0.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(1, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/1.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(2, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/2.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(3, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/3.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(4, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/4.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(5, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/5.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(6, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/6.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//		list.add(new NewsModel(7, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/7.jpg", "Elon Musk", "Description", "Created On", 10, R.string.fontello_heart_empty));
-//
-//		return list;
 	}
 	
 	public static ArrayList<DummyModel> getDummyModelListSocial() {
