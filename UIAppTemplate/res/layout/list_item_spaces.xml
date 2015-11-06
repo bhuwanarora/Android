@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_header_of_item"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="20dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal" >
+
+            <com.csform.android.uiapptemplate.font.MaterialDesignIconsTextView
+                android:id="@+id/icon_time"
+                style="@style/TextViewAppearance.Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:text="@string/material_icon_clock"
+                android:textColor="@color/main_color_500"
+                android:textSize="22dp" />
+
+            <com.csform.android.uiapptemplate.font.RobotoTextView
+                android:id="@+id/minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="2dp"
+                android:text="22"
+                android:textColor="@color/main_color_grey_500"
+                android:textSize="12sp"
+                app:typeface="robotoBold" />
+
+            <com.csform.android.uiapptemplate.font.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min ago"
+                android:textColor="@color/main_color_grey_500"
+                android:textSize="12sp"
+                app:typeface="robotoLight" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/lvis_photo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/cd_main_image"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:paddingLeft="0dp"
+                    android:text="Jane Smith"
+                    android:textColor="@color/main_color_grey_700"
+                    android:textSize="14sp"
+                    app:typeface="robotoRegular" />
+
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_view_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:paddingLeft="0dp"
+                    android:text="X Views"
+                    android:textColor="@color/main_color_grey_700"
+                    android:textSize="14sp"
+                    app:typeface="robotoRegular" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

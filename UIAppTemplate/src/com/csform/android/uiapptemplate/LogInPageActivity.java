@@ -1,6 +1,7 @@
 package com.csform.android.uiapptemplate;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class LogInPageActivity extends Activity implements OnClickListener {
 
@@ -23,7 +27,12 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE); // Removing
 																// ActionBar
-		String category = DARK;
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        if (!imageLoader.isInited()) {
+            imageLoader.init(ImageLoaderConfiguration.createDefault(this));
+        }
+
+        String category = LIGHT;
 		Bundle extras = getIntent().getExtras();
 		if (extras != null
 				&& extras.containsKey(LOGIN_PAGE_AND_LOADERS_CATEGORY)) {
@@ -63,6 +72,10 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+        Intent myIntent = new Intent(LogInPageActivity.this, SpacesListActivity.class);
+//        myIntent.putExtra("key", value); //Optional parameters
+        LogInPageActivity.this.startActivity(myIntent);
+
 		if (v instanceof TextView) {
 			TextView tv = (TextView) v;
 			Toast.makeText(this, tv.getText(), Toast.LENGTH_SHORT).show();

@@ -1,7 +1,9 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Default application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+
         <item name="actionBarStyle">@style/ActionBarStyle</item>
 
 	    <item name="colorPrimary">@color/main_color_500</item>

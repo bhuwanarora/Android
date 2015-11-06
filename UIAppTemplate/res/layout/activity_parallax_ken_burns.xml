@@ -21,6 +21,9 @@
             android:layout_gravity="center"
             android:contentDescription="@string/cd_background_image"
             android:src="@drawable/ic_launcher" />
+
     </FrameLayout>
 
+
 </merge>
+

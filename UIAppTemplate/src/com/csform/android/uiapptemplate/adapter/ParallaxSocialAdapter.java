@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import android.content.Context;
+import android.nfc.Tag;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.model.DummyModel;
+import com.csform.android.uiapptemplate.model.NewsModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.util.Swappable;
 
@@ -24,15 +26,16 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 
 	private Context mContext;
 	private LayoutInflater mInflater;
-	private ArrayList<DummyModel> mDummyModelList;
+	private ArrayList<NewsModel> mNewsModelList;
+	private static final String TAG = "ParallaxSocialAdapter";
 
 	public ParallaxSocialAdapter(Context context,
-			ArrayList<DummyModel> dummyModelList,
+			ArrayList<NewsModel> NewsModelList,
 			boolean shouldShowDragAndDropIcon) {
 		mContext = context;
 		mInflater = (LayoutInflater) mContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		mDummyModelList = dummyModelList;
+		mNewsModelList = NewsModelList;
 	}
 
 	@Override
@@ -42,22 +45,22 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 
 	@Override
 	public int getCount() {
-		return mDummyModelList.size();
+		return mNewsModelList.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return mDummyModelList.get(position);
+		return mNewsModelList.get(position);
 	}
 
 	@Override
 	public long getItemId(int position) {
-		return mDummyModelList.get(position).getId();
+		return mNewsModelList.get(position).getId();
 	}
 
 	@Override
 	public void swapItems(int positionOne, int positionTwo) {
-		Collections.swap(mDummyModelList, positionOne, positionTwo);
+		Collections.swap(mNewsModelList, positionOne, positionTwo);
 	}
 
 	@Override
@@ -76,15 +79,12 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 					.findViewById(R.id.lvis_photo);
 			holder.image = (ImageView) convertView
 					.findViewById(R.id.lvis_image);
-			holder.name = (TextView) convertView.findViewById(R.id.lvis_name);
-			holder.hours = (TextView) convertView.findViewById(R.id.lvis_hours);
-			holder.like = (TextView) convertView.findViewById(R.id.lvis_like);
-			holder.comment = (TextView) convertView
-					.findViewById(R.id.lvis_comment);
+			holder.title = (TextView) convertView.findViewById(R.id.lvis_title);
+
+			holder.createdOn = (TextView) convertView.findViewById(R.id.lvis_created_on);
+			holder.description = (TextView) convertView.findViewById(R.id.lvis_description);
 			holder.share = (TextView) convertView.findViewById(R.id.lvis_share);
 			holder.image.setOnClickListener(this);
-			holder.like.setOnClickListener(this);
-			holder.comment.setOnClickListener(this);
 			holder.share.setOnClickListener(this);
 			holder.friends.setOnClickListener(this);
 			convertView.setTag(holder);
@@ -97,16 +97,14 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 		else
 			holder.layout.setVisibility(View.VISIBLE);
 
-		DummyModel dm = mDummyModelList.get(position);
+		NewsModel dm = mNewsModelList.get(position);
 
-		ImageUtil.displayRoundImage(holder.photo,
-				"http://pengaja.com/uiapptemplate/newphotos/profileimages/2.jpg", null);
+		ImageUtil.displayRoundImage(holder.photo, "http://pengaja.com/uiapptemplate/newphotos/profileimages/2.jpg", null);
 		ImageUtil.displayImage(holder.image, dm.getImageURL(), null);
-		holder.hours.setText(position + 1 + " hours ago");
-		holder.name.setText(dm.getText());
+		holder.createdOn.setText(dm.getCreatedOn());
+		holder.title.setText(dm.getTitle());
+		holder.description.setText(dm.getDescription());
 		holder.image.setTag(position);
-		holder.like.setTag(position);
-		holder.comment.setTag(position);
 		holder.share.setTag(position);
 		holder.friends.setTag(position);
 		return convertView;
@@ -117,8 +115,10 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 		public LinearLayout friends;
 		public ImageView photo;
 		public ImageView image;
-		public TextView name;
-		public TextView hours;
+		public TextView title;
+		public TextView createdOn;
+		public TextView description;
+		public TextView viewCount;
 		public TextView like;
 		public TextView comment;
 		public TextView share;
@@ -127,22 +127,16 @@ public class ParallaxSocialAdapter extends BaseAdapter implements Swappable,
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		Log.v(TAG, ""+v.getTag());
 		int position = (Integer) v.getTag();
-		switch (v.getId()) {
+		switch (v.getId()){
 		case R.id.lvis_image:
 			Toast.makeText(mContext, "Image: " + position, Toast.LENGTH_SHORT)
 					.show();
 			break;
-		case R.id.lvis_like:
-			Toast.makeText(mContext, "Like: " + position, Toast.LENGTH_SHORT)
-					.show();
-			break;
-		case R.id.lvis_comment:
-			Toast.makeText(mContext, "Comment: " + position, Toast.LENGTH_SHORT)
-					.show();
-			break;
+
 		case R.id.lvis_share:
-			Toast.makeText(mContext, "Share: " + position, Toast.LENGTH_SHORT)
+			Toast.makeText(mContext, "Push: " + position, Toast.LENGTH_SHORT)
 					.show();
 			break;
 		case R.id.friends:

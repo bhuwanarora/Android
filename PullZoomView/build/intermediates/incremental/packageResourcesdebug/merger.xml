@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res"><file name="ic_launcher" path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/drawable-hdpi/ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/drawable-mdpi/ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/drawable-xhdpi/ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/drawable-xxhdpi/ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/values/attrs.xml" qualifiers=""><declare-styleable name="PullToZoomListView">
+        <attr format="reference" name="listHeadView"/>
+        <attr format="boolean" name="isHeadParallax"/>
+    </declare-styleable><declare-styleable name="PullToZoomView">
+        <attr format="reference" name="headerView"/>
+        <attr format="reference" name="contentView"/>
+        <attr format="reference" name="zoomView"/>
+        <attr format="boolean" name="isHeaderParallax"/>
+    </declare-styleable><declare-styleable name="PullToZoomScrollView">
+        <attr format="reference" name="scrollHeadView"/>
+        <attr format="reference" name="scrollContentView"/>
+        <attr format="reference" name="scrollZoomView"/>
+    </declare-styleable></file><file path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/res/values/strings.xml" qualifiers=""><string name="app_name">Library</string></file></source><source path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/build/generated/res/rs/debug"/><source path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/build/generated/res/resValues/debug"/></dataSet><dataSet config="debug"><source path="/Users/bhuwan/ReadersDoor/Android/android/oditty/PullZoomView/build-types/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="PullToZoomView"><attr format="reference" name="headerView"/><attr format="reference" name="contentView"/><attr format="reference" name="zoomView"/><attr format="boolean" name="isHeaderParallax"/></declare-styleable><declare-styleable name="PullToZoomScrollView"><attr format="reference" name="scrollHeadView"/><attr format="reference" name="scrollContentView"/><attr format="reference" name="scrollZoomView"/></declare-styleable><declare-styleable name="PullToZoomListView"><attr format="reference" name="listHeadView"/><attr format="boolean" name="isHeadParallax"/></declare-styleable></configuration></mergedItems></merger>

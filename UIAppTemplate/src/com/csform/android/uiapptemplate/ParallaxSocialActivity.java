@@ -37,11 +37,11 @@ public class ParallaxSocialActivity extends ActionBarActivity {
 
 		PullToZoomListViewEx listView = (PullToZoomListViewEx) findViewById(R.id.paralax_social_list_view);
 		listView.setShowDividers(0);
-		listView.setAdapter(new ParallaxSocialAdapter(this, DummyContent
-				.getDummyModelListSocial(), false));
+//		listView.setAdapter(new ParallaxSocialAdapter(this, DummyContent
+//				.getNewsModelList(), false));
 
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getSupportActionBar().setTitle("Parallax social");
+		getSupportActionBar().setTitle("Spaces Page Layout");
 	}
 
 	@Override

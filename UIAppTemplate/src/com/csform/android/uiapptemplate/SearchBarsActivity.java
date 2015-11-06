@@ -21,6 +21,7 @@ import com.csform.android.uiapptemplate.util.DummyContent;
 
 public class SearchBarsActivity extends Activity implements OnClickListener {
 
+
 	public static final String SEARCH_BARS_OPTION = "com.csform.android.uiapptemplate.SearchBarsActivity";
 	public static final String SEARCH_BARS_DARK = "Dark Search Bar";
 	public static final String SEARCH_BARS_LIGHT = "Light Search Bar";
@@ -36,34 +37,21 @@ public class SearchBarsActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().requestFeature(Window.FEATURE_NO_TITLE); // We hide Action
-																// Bar
-
+		getWindow().requestFeature(Window.FEATURE_NO_TITLE); // We hide Action Bar
 		String option = SEARCH_BARS_DARK;
 		Bundle extras = getIntent().getExtras();
 		if (extras != null && extras.containsKey(SEARCH_BARS_OPTION)) {
 			option = extras.getString(SEARCH_BARS_OPTION, SEARCH_BARS_DARK);
 		}
-		if (option.equals(SEARCH_BARS_DARK)) {
-			setContentView(R.layout.activity_search_bars_dark);
-		} else if (option.equals(SEARCH_BARS_LIGHT)) {
-			setContentView(R.layout.activity_search_bars_light);
-		} else if (option.equals(SEARCH_BARS_TRAVEL)) {
-			setContentView(R.layout.activity_search_bars_travel);
-		} else if (option.equals(SEARCH_BARS_SOCIAL)) {
-			setContentView(R.layout.activity_search_bars_social);
-		} else {
-			setContentView(R.layout.activity_search_bars_light);
-		}
+		setContentView(R.layout.activity_search_bars_dark);
 
 		mSearchField = (EditText) findViewById(R.id.search_field);
-		mXMark = (TextView) findViewById(R.id.search_x);
+
 		mMicrofon = findViewById(R.id.search_microfon);
 		mListView = (ListView) findViewById(R.id.list_view);
 
 		searchableArrayList = DummyContent.getDummyModelList();
 
-		mXMark.setOnClickListener(this);
 		mMicrofon.setOnClickListener(this);
 
 		mSearchField.addTextChangedListener(new TextWatcher() {

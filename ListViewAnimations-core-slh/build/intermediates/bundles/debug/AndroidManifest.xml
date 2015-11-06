@@ -15,7 +15,10 @@
   ~ limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.nhaarman.listviewanimations.slh" >
+
+    <uses-sdk tools:overrideLibrary="se.emilsjolander.stickylistheaders" />
 
     <application android:allowBackup="true" >
     </application>

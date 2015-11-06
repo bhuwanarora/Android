@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color_600"
+        android:gravity="center_vertical" >
+
+        <com.csform.android.uiapptemplate.font.FontelloTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/fontello_search"
+            android:textColor="@color/main_color_800"
+            android:textSize="18dp"
+            tools:ignore="SpUsage" />
+
+        <EditText
+            android:id="@+id/search_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background_accent"
+            android:inputType="text"
+            android:textColor="#fff"
+            android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
+
+        <com.csform.android.uiapptemplate.font.FontelloTextView
+            android:id="@+id/search_microfon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/fontello_microfon"
+            android:textColor="@color/main_color_800"
+            android:textSize="18dp"
+            tools:ignore="SpUsage" />
+
+
+    </LinearLayout>
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/main_layout"-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--tools:context=".MainActivity">-->
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--android:elevation="6dp"-->
+            <!--android:minHeight="?attr/actionBarSize"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
+
+        <!--<android.support.design.widget.TabLayout-->
+            <!--android:id="@+id/tab_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/toolbar"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--android:elevation="6dp"-->
+            <!--android:minHeight="?attr/actionBarSize"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>-->
+
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/pager"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_below="@id/tab_layout"/>-->
+
+    <!--</RelativeLayout>-->
+</LinearLayout><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/activity_search_bars_dark.xml -->

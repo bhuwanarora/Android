@@ -1,4 +1,4 @@
-include ':FloatLabeledTextField'
+include ':FloatLabeledTextField', ':volley'
 include ':ListViewAnimations-core-slh'
 include ':KenBurnsView'
 include ':NotBoringActionBar'

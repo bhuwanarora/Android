@@ -100,6 +100,14 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp" >
 
+        <ImageView
+            android:id="@+id/lvis_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:contentDescription="@string/cd_main_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_small" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,8 +127,10 @@
                 android:contentDescription="@string/cd_main_image"
                 android:scaleType="centerCrop" />
 
+
+
             <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_name"
+                android:id="@+id/lvis_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="6dp"
@@ -131,7 +141,7 @@
                 app:typeface="robotoRegular" />
 
             <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_hours"
+                android:id="@+id/lvis_created_on"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="0dp"
@@ -139,54 +149,53 @@
                 android:textColor="@color/main_color_grey_500"
                 android:textSize="12sp"
                 app:typeface="robotoRegular" />
+
+
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/lvis_image"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:contentDescription="@string/cd_main_image"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_small" />
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="12dp"
+            android:background="@drawable/social_top_background"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:orientation="horizontal" >
+            <com.csform.android.uiapptemplate.font.RobotoTextView
+                android:id="@+id/lvis_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                android:textColor="@color/main_color_grey_500"
+                android:textSize="12sp"
+                app:typeface="robotoRegular" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/social_bottom_background"
-            android:gravity="right|center_vertical"
+            android:gravity="left|center_vertical"
             android:minHeight="?android:attr/listPreferredItemHeight"
             android:orientation="horizontal"
             android:paddingRight="16dp" >
 
             <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_like"
+                android:id="@+id/lvis_views"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
                 android:background="@drawable/transparent_button_selector"
                 android:paddingBottom="12dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="12dp"
-                android:text="LIKE"
-                android:textColor="@color/material_yellow_500"
-                android:textSize="14sp"
-                app:typeface="robotoRegular" />
-
-            <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/transparent_button_selector"
-                android:paddingBottom="12dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="12dp"
-                android:text="COMMENT"
-                android:textColor="@color/material_yellow_500"
+                android:text="X Views"
                 android:textSize="14sp"
                 app:typeface="robotoRegular" />
 
@@ -199,8 +208,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="12dp"
-                android:text="SHARE"
-                android:textColor="@color/material_yellow_500"
+                android:text="Push"
                 android:textSize="14sp"
                 app:typeface="robotoRegular" />
         </LinearLayout>

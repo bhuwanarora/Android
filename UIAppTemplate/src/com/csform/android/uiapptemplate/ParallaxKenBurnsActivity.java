@@ -2,6 +2,7 @@ package com.csform.android.uiapptemplate;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.adapter.DefaultAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
 import com.csform.android.uiapptemplate.util.DummyContent;
 import com.csform.android.uiapptemplate.view.AlphaForegroundColorSpan;
 import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
@@ -53,6 +56,9 @@ public class ParallaxKenBurnsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String id = intent.getStringExtra(SpacesListAdapter.EXTRA_MESSAGE);
+
 		mSmoothInterpolator = new AccelerateDecelerateInterpolator();
 		mHeaderHeight = getResources().getDimensionPixelSize(
 				R.dimen.ken_burns_header);
@@ -61,18 +67,17 @@ public class ParallaxKenBurnsActivity extends Activity {
 		mListView = (ListView) findViewById(R.id.list_view);
 		mHeader = findViewById(R.id.header);
 		mHeaderPicture = (KenBurnsView) findViewById(R.id.header_picture);
-		
+
 		mHeaderPicture.setImageResource(R.drawable.background_small);
-		
+
 		mHeaderPicture.setScaleType(ScaleType.CENTER_CROP);
 		mHeaderLogo = (ImageView) findViewById(R.id.header_logo);
 		mActionBarTitleColor = Color.WHITE;
-		mSpannableString = new SpannableString(
-				getString(R.string.app_name));
+		mSpannableString = new SpannableString(getString(R.string.app_name));
 		mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(
 				mActionBarTitleColor);
 		setupActionBar();
-		setupListView();
+		setupListView(id);
 	}
 	
 	@Override
@@ -84,16 +89,11 @@ public class ParallaxKenBurnsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void setupListView() {
+	private void setupListView(String id) {
 		mPlaceHolderView = getLayoutInflater().inflate(
 				R.layout.header_fake, mListView, false);
 		mListView.addHeaderView(mPlaceHolderView, null, false);
-		
-		//TODO You'd probably want to set your own adapter
-		// >>>>>>>>>>>>>>>
-		mListView.setAdapter(new DefaultAdapter(this, DummyContent.getDummyModelList(), false));
-		//<<<<<<<<<<<<<<<<
-		
+		mListView.setAdapter(new SpacesAdapter(this, DummyContent.getNewsModelList(id), false));
 		mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {

@@ -61,54 +61,54 @@ public class MainActivity extends ActionBarActivity {
 			imageLoader.init(ImageLoaderConfiguration.createDefault(this));
 		}
 
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
-				R.string.drawer_open, R.string.drawer_close) {
-			public void onDrawerClosed(View view) {
-				getSupportActionBar().setTitle(mTitle);
-				supportInvalidateOptionsMenu();
-			}
+//		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//		setSupportActionBar(toolbar);
+//		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+//		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
+//				R.string.drawer_open, R.string.drawer_close) {
+//			public void onDrawerClosed(View view) {
+//				getSupportActionBar().setTitle(mTitle);
+//				supportInvalidateOptionsMenu();
+//			}
+//
+//			public void onDrawerOpened(View drawerView) {
+//				getSupportActionBar().setTitle(mDrawerTitle);
+//				supportInvalidateOptionsMenu();
+//			}
+//		};
+//		mDrawerToggle.setDrawerIndicatorEnabled(true);
+//		mDrawerLayout.setDrawerListener(mDrawerToggle);
+//		mTitle = mDrawerTitle = getTitle();
+//		mDrawerList = (ListView) findViewById(R.id.list_view);
 
-			public void onDrawerOpened(View drawerView) {
-				getSupportActionBar().setTitle(mDrawerTitle);
-				supportInvalidateOptionsMenu();
-			}
-		};
-		mDrawerToggle.setDrawerIndicatorEnabled(true);
-		mDrawerLayout.setDrawerListener(mDrawerToggle);
-		mTitle = mDrawerTitle = getTitle();
-		mDrawerList = (ListView) findViewById(R.id.list_view);
+//		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+//				GravityCompat.START);
+//		prepareNavigationDrawerItems();
+//		mDrawerList.setAdapter(new DrawerAdapter(this, mDrawerItems, true));
+//		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+//		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
-				GravityCompat.START);
-		prepareNavigationDrawerItems();
-		mDrawerList.setAdapter(new DrawerAdapter(this, mDrawerItems, true));
-		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-		mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-		mHandler = new Handler();
-
-		if (savedInstanceState == null) {
-			int position = 0;
-			selectItem(position, mDrawerItems.get(position).getTag());
-			mDrawerLayout.openDrawer(mDrawerList);
-		}
+//		mHandler = new Handler();
+//
+//		if (savedInstanceState == null) {
+//			int position = 0;
+//			selectItem(position, mDrawerItems.get(position).getTag());
+//			mDrawerLayout.openDrawer(mDrawerList);
+//		}
 	}
 
 	@Override
 	public void onBackPressed() {
-		if (!mShouldFinish && !mDrawerLayout.isDrawerOpen(mDrawerList)) {
-			Toast.makeText(getApplicationContext(), R.string.confirm_exit,
-					Toast.LENGTH_SHORT).show();
-			mShouldFinish = true;
-			mDrawerLayout.openDrawer(mDrawerList);
-		} else if (!mShouldFinish && mDrawerLayout.isDrawerOpen(mDrawerList)) {
-			mDrawerLayout.closeDrawer(mDrawerList);
-		} else {
-			super.onBackPressed();
-		}
+//		if (!mShouldFinish && !mDrawerLayout.isDrawerOpen(mDrawerList)) {
+//			Toast.makeText(getApplicationContext(), R.string.confirm_exit,
+//					Toast.LENGTH_SHORT).show();
+//			mShouldFinish = true;
+//			mDrawerLayout.openDrawer(mDrawerList);
+//		} else if (!mShouldFinish && mDrawerLayout.isDrawerOpen(mDrawerList)) {
+//			mDrawerLayout.closeDrawer(mDrawerList);
+//		} else {
+//			super.onBackPressed();
+//		}
 	}
 
 	private void prepareNavigationDrawerItems() {
@@ -255,7 +255,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-		mDrawerToggle.syncState();
+//		mDrawerToggle.syncState();
 	}
 
 	@Override

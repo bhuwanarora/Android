@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.csform.android.uiapptemplate.view.pzv.PullToZoomListViewEx
+            android:id="@+id/paralax_social_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            app:headerView="@layout/header_parallax_social" />
+        <!-- This part of code is from old library for PullToZoomView -->
+        <!-- app:listHeadView="@layout/header_navigation_drawer_3" /> -->
+
+    </LinearLayout>
+    <RelativeLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#fff"
+    android:gravity="center" >
+        <SeekBar
+            android:id="@+id/seek1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="20"
+            android:secondaryProgress="20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Custom Seekbar"
+            android:textColor="#fcfcfc"
+            android:textSize="20sp" />
+
+        <SeekBar
+            android:id="@+id/volume_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progressbar"
+            android:secondaryProgress="0"
+            android:indeterminate="false" />
+    </RelativeLayout>
+</LinearLayout><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/spaces_view.xml -->

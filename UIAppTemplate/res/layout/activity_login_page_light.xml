@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background_light"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp" >
