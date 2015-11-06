@@ -1,0 +1,15 @@
+AnimatedExpandableListView/*.iml
+CircularProgressButton/*.iml
+FloatLabeledTextField/*.iml
+KenBurnsView/*.iml
+ListViewAnimations-core-slh/*.iml
+ListViewAnimations-core/*.iml
+MaterialRippleLayout/*.iml
+PullZoomView/*.iml
+ShapeImageView/*.iml
+SwipeTouchListenerTestActivity/*.iml
+
+*.class
+*.iml
+*.apk
+NotBoringActionBar/*
