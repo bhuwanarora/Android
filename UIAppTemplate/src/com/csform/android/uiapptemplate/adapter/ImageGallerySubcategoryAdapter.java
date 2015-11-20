@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,12 +8,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.ImageGallerySubcategoryModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
+
+import java.util.ArrayList;
 
 public class ImageGallerySubcategoryAdapter extends BaseAdapter /*implements OnClickListener*/ {
 

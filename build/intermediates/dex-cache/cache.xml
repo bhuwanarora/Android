@@ -2,6 +2,55 @@
 <items version="2" >
 
     <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-4daa349416763529624b2f7a0801df2f908ebb63.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/jars/libs/android-support-v7-appcompat.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3c88b0ae4f2a995ed6957a78b5bf132986d4c538">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/android-support-v7-appcompat-ad9c1a6018d10c4b9a2337f947d537a615b83fba.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-f802189ba67cf8ff9a647020fbb92330550ed257.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b4ce0ea2dcc17df940579964aaf7ffd206c2df9c">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-3ed44f0e96bc956e5bda51401ce026a59bdbdfa8.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-266bf7aef704aecdd89c27653337eb8e5efc85d2.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-cbbef6e7d4e933da1105a389368ad88d830723b0.jar" />
+    </item>
+    <item
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/StickyListHeaders/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8f89deaa4fb65d7394ffa045bd152d8d85a80d5c">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-d126cf6f8d9c8cd9dbfcb7e440ed206d92fb20d6.jar" />
+    </item>
+    <item
         jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/volley/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -16,25 +65,25 @@
         <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-core-slh_3.1.0-174511c44c89cb5b77aad375223d8bd8be72954a.jar" />
     </item>
     <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/jars/libs/android-support-v7-appcompat.jar"
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/listviewanimations_lib-manipulation_3.1.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="3c88b0ae4f2a995ed6957a78b5bf132986d4c538">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/android-support-v7-appcompat-ad9c1a6018d10c4b9a2337f947d537a615b83fba.jar" />
+        sha1="63737e512fcd9e0ebe9bcd0bb375c2dded74116f">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-manipulation_3.1.0-ca14af10dfb5c86f3de31740e7ea5f718ce4c11a.jar" />
     </item>
     <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/StickyListHeaders/unspecified/jars/classes.jar"
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="8f89deaa4fb65d7394ffa045bd152d8d85a80d5c">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-d126cf6f8d9c8cd9dbfcb7e440ed206d92fb20d6.jar" />
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-92aa269bbb2e38e915d7d35bfb131293bc09723b.jar" />
     </item>
     <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/jars/classes.jar"
+        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/listviewanimations_lib-core_3.1.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="b4ce0ea2dcc17df940579964aaf7ffd206c2df9c">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/classes-3ed44f0e96bc956e5bda51401ce026a59bdbdfa8.jar" />
+        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
+        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-core_3.1.0-0e8957c09d607795a20ebe89b787128dead9388e.jar" />
     </item>
     <item
         jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/universal-image-loader-1.9.3.jar"
@@ -44,32 +93,11 @@
         <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-de522c1108ef66271f2347c6a06b61d2dc2272f3.jar" />
     </item>
     <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/listviewanimations_lib-manipulation_3.1.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="63737e512fcd9e0ebe9bcd0bb375c2dded74116f">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-manipulation_3.1.0-ca14af10dfb5c86f3de31740e7ea5f718ce4c11a.jar" />
-    </item>
-    <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/nineoldandroids-2.4.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-f802189ba67cf8ff9a647020fbb92330550ed257.jar" />
-    </item>
-    <item
         jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/jars/libs/android-support-v4.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="3e4e879d0b3dc11f2feb3f55e77e3b5bd82c4a28">
         <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/android-support-v4-d5d577e05cdd3c51e6766184a9c58cb6d26a4533.jar" />
-    </item>
-    <item
-        jar="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/libs/listviewanimations_lib-core_3.1.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
-        <dex dex="/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/pre-dexed/debug/listviewanimations_lib-core_3.1.0-0e8957c09d607795a20ebe89b787128dead9388e.jar" />
     </item>
 
 </items>

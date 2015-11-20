@@ -35,7 +35,9 @@
                 android:textColor="@color/main_color_800"
                 android:textSize="18dp"
                 tools:ignore="SpUsage" />
-
+            <LinearLayout
+                android:focusable="true" android:focusableInTouchMode="true"
+                android:layout_width="0px" android:layout_height="0px"/>
             <EditText
                 android:id="@+id/search_field"
                 android:layout_width="0dp"
@@ -44,8 +46,9 @@
                 android:background="@drawable/edit_text_background_accent"
                 android:inputType="text"
                 android:textColor="#fff"
+                android:nextFocusUp="@id/search_field"
+                android:nextFocusLeft="@id/search_field"
                 android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
-
             <com.csform.android.uiapptemplate.font.FontelloTextView
                 android:id="@+id/search_microfon"
                 android:layout_width="wrap_content"

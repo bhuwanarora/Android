@@ -16,7 +16,6 @@
 
 package com.csform.android.uiapptemplate.view;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -49,6 +48,8 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 
 import com.csform.android.uiapptemplate.R;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 @SuppressLint("ClickableViewAccessibility")
 public class MaterialRippleLayout extends FrameLayout {

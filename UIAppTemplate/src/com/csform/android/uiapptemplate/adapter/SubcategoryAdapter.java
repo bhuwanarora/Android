@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.R;
+
+import java.util.List;
 
 public class SubcategoryAdapter extends BaseAdapter {
 	

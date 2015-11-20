@@ -1,31 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical" >
+    android:background="@android:color/white"
+    android:orientation="vertical" >
 
-    <com.csform.android.uiapptemplate.font.FontelloTextView
-        android:id="@+id/search_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/fontello_search"
-        android:textColor="@color/main_color_800"
-        android:textSize="18dp"
-        tools:ignore="SpUsage" />
-
-    <com.csform.android.uiapptemplate.font.RobotoTextView
-        android:id="@+id/search_text"
-        style="@style/TextViewAppearance.Body1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:typeface="robotoRegular" />
+        android:orientation="vertical">
+        <com.csform.android.uiapptemplate.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rippleColor="@color/main_color_grey_400"
+            app:rippleAlpha="0.6"
+            app:rippleDuration="350">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeight"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/lvis_photo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/cd_main_image"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <com.csform.android.uiapptemplate.font.RobotoTextView
+                        android:id="@+id/lvis_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:paddingLeft="0dp"
+                        android:text="Jane Smith"
+                        android:textColor="@color/main_color_grey_700"
+                        android:textSize="22sp"
+                        app:typeface="robotoRegular"
+                        android:fontFamily="@string/typography1" />
+
+                    <com.csform.android.uiapptemplate.font.RobotoTextView
+                        android:id="@+id/lvis_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:paddingLeft="0dp"
+                        android:text="Type"
+                        android:textColor="@color/main_color_grey_700"
+                        android:textSize="14sp"
+                        app:typeface="robotoRegular" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.csform.android.uiapptemplate.view.MaterialRippleLayout>
+    </LinearLayout>
 
 </LinearLayout><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/list_view_item_search.xml -->

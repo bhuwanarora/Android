@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +10,8 @@ import android.widget.ImageView;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
+
+import java.util.List;
 
 public class GoogleCardsAdapter extends ArrayAdapter<DummyModel> {
 	

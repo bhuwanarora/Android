@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -18,6 +15,9 @@ import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.undo.UndoAdapter;
 import com.nhaarman.listviewanimations.util.Swappable;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class DefaultAdapter extends BaseAdapter implements Swappable, UndoAdapter, OnDismissCallback {
 

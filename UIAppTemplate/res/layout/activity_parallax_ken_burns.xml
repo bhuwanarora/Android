@@ -1,29 +1,65 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <include layout="@layout/list_view"/>
-
-    <FrameLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/ken_burns_header" >
-
-        <com.csform.android.uiapptemplate.view.kbv.KenBurnsView
-            android:id="@+id/header_picture"
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+         <!-- FOOTER-->
+        <RelativeLayout
+            android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <ImageView
-            android:id="@+id/header_logo"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/cd_background_image"
-            android:src="@drawable/ic_launcher" />
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+                    <LinearLayout
+                        android:id="@+id/horizontallistview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </RelativeLayout>
 
-    </FrameLayout>
-
-
+        <!-- CONTENT-->
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/footer"
+            android:gravity="center" >
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rv"
+                />
+            <include layout="@layout/list_view"/>
+            <FrameLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ken_burns_header" >
+                <com.csform.android.uiapptemplate.view.kbv.KenBurnsView
+                    android:id="@+id/header_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/header_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/cd_background_image"
+                    android:src="@drawable/ic_launcher" />
+            </FrameLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 </merge>
-

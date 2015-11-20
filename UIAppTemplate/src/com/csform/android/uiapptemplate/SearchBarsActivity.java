@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,6 +16,8 @@ import android.widget.Toast;
 import com.csform.android.uiapptemplate.adapter.SearchAdapter;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.util.DummyContent;
+
+import java.util.ArrayList;
 
 public class SearchBarsActivity extends Activity implements OnClickListener {
 
@@ -81,8 +81,8 @@ public class SearchBarsActivity extends Activity implements OnClickListener {
 					mListView.setAdapter(null);
 					mXMark.setText(R.string.fontello_x_mark);
 				} else {
-					mListView.setAdapter(new SearchAdapter(
-							SearchBarsActivity.this, searchedArray));
+//					mListView.setAdapter(new SearchAdapter(
+//							SearchBarsActivity.this, searchedArray));
 					mXMark.setText(R.string.fontello_x_mark_masked);
 				}
 			}

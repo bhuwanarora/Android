@@ -16,7 +16,6 @@
 
 package com.csform.android.uiapptemplate.adapter;
 
-import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +26,8 @@ import android.widget.TextView;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.ArrayAdapter;
+
+import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
 public class MyStickyListHeadersAdapter extends ArrayAdapter<String> implements StickyListHeadersAdapter {
 

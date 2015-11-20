@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +13,9 @@ import android.widget.ListView;
 import com.csform.android.uiapptemplate.CategoriesListViewActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.adapter.SubcategoryAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewsFragment extends Fragment implements OnItemClickListener {
 

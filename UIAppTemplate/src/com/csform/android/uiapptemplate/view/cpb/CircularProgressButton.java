@@ -1,9 +1,5 @@
 package com.csform.android.uiapptemplate.view.cpb;
 
-import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.font.RobotoTextView;
-import com.csform.android.uiapptemplate.font.RobotoTextView.Roboto;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -18,6 +14,10 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.StateSet;
 import android.widget.Button;
+
+import com.csform.android.uiapptemplate.R;
+import com.csform.android.uiapptemplate.font.RobotoTextView;
+import com.csform.android.uiapptemplate.font.RobotoTextView.Roboto;
 
 public class CircularProgressButton extends Button {
 

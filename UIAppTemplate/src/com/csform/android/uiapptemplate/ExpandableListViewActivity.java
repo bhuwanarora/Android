@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -21,6 +18,9 @@ import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.AnimatedExpandableListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is an example usage of the AnimatedExpandableListView class.

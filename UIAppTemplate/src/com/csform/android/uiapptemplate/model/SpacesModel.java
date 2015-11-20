@@ -8,9 +8,6 @@ public class SpacesModel {
     private int mIconRes;
     private int mViewCount;
 
-    public SpacesModel() {
-    }
-
     public SpacesModel(long id, String imageURL, String name, int ViewCount, int iconRes){
         mId = id;
         mImageURL = imageURL;
@@ -28,7 +25,8 @@ public class SpacesModel {
     }
 
     public String getImageURL() {
-        return mImageURL;
+//        return mImageURL;
+        return "https://oditty.me/assets/rooms.png";
     }
 
     public String getName() {

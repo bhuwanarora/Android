@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -18,6 +16,8 @@ import com.csform.android.uiapptemplate.ImageGallerySubcategoryActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.ImageGalleryCategoryModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
+
+import java.util.ArrayList;
 
 public class ImageGalleryCategoryAdapter extends BaseAdapter implements OnClickListener {
 	 

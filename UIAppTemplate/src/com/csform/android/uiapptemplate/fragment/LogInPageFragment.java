@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +15,9 @@ import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.RegisterPageActivity;
 import com.csform.android.uiapptemplate.adapter.SubcategoryAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LogInPageFragment extends Fragment implements OnItemClickListener {
 
 	private ListView mListView;
@@ -31,10 +31,6 @@ public class LogInPageFragment extends Fragment implements OnItemClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mLogInPages = new ArrayList<String>();
-		mLogInPages.add(LogInPageActivity.LIGHT);
-		mLogInPages.add(LogInPageActivity.DARK);
-		mLogInPages.add(LogInPageActivity.TRAVEL);
-		mLogInPages.add(LogInPageActivity.SOCIAL);
 		mLogInPages.add(RegisterPageActivity.REGISTER_TRAVEL);
 	}
 
@@ -57,8 +53,6 @@ public class LogInPageFragment extends Fragment implements OnItemClickListener {
 			long id) {
 		if (position != 4) {
 			Intent intent = new Intent(getActivity(), LogInPageActivity.class);
-			intent.putExtra(LogInPageActivity.LOGIN_PAGE_AND_LOADERS_CATEGORY,
-					mLogInPages.get(position));
 			startActivity(intent);
 		} else {
 			Intent intent = new Intent(getActivity(),

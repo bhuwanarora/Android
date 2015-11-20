@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import java.util.ArrayList;
-
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -10,6 +8,8 @@ import android.widget.ListView;
 
 import com.csform.android.uiapptemplate.adapter.ImageGallerySubcategoryAdapter;
 import com.csform.android.uiapptemplate.model.ImageGallerySubcategoryModel;
+
+import java.util.ArrayList;
 
 public class ImageGallerySubcategoryActivity extends ActionBarActivity {
 

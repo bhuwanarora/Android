@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import com.csform.android.uiapptemplate.adapter.DrawerSocialAdapter;
-import com.csform.android.uiapptemplate.util.ImageUtil;
-
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +16,9 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.csform.android.uiapptemplate.adapter.DrawerSocialAdapter;
+import com.csform.android.uiapptemplate.util.ImageUtil;
 
 public class LeftMenusSocialActivity extends ActionBarActivity {
 

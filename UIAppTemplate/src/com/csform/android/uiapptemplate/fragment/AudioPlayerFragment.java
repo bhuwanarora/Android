@@ -1,12 +1,12 @@
 package com.csform.android.uiapptemplate.fragment;
 
-import com.csform.android.uiapptemplate.R;
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.csform.android.uiapptemplate.R;
 
 /**
  * Coming soon.

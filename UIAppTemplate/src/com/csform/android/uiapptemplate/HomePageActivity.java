@@ -1,17 +1,8 @@
 package com.csform.android.uiapptemplate;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-//import android.support.design.widget.TabLayout;
-//import android.support.v4.view.ViewPager;
-//import android.support.v7.app.AppCompatActivity;
-//import android.support.v7.widget.Toolbar;
-//import android.view.Menu;
-//import android.view.MenuItem;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -25,6 +16,15 @@ import android.widget.Toast;
 import com.csform.android.uiapptemplate.adapter.SearchAdapter;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.util.DummyContent;
+
+import java.util.ArrayList;
+
+//import android.support.design.widget.TabLayout;
+//import android.support.v4.view.ViewPager;
+//import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
+//import android.view.Menu;
+//import android.view.MenuItem;
 
 public class HomePageActivity extends Activity implements OnClickListener {
 
@@ -104,8 +104,8 @@ public class HomePageActivity extends Activity implements OnClickListener {
                     mListView.setAdapter(null);
                     mXMark.setText(R.string.fontello_x_mark);
                 } else {
-                    mListView.setAdapter(new SearchAdapter(
-                            HomePageActivity.this, searchedArray));
+//                    mListView.setAdapter(new SearchAdapter(
+//                            HomePageActivity.this, searchedArray));
                     mXMark.setText(R.string.fontello_x_mark_masked);
                     mXMark.setText(R.string.fontello_x_mark_masked);
                 }

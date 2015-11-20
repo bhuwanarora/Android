@@ -1,5 +1,14 @@
 package com.csform.android.uiapptemplate.view.siv.path.parser;
 
+import android.graphics.Matrix;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -7,15 +16,6 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import android.graphics.Matrix;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.util.Log;
 
 //https://github.com/geosolutions-it/mapsforge/tree/master/svg-android
 /*

@@ -8,8 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.csform.android.uiapptemplate.adapter.SpacesAdapter;
-import com.csform.android.uiapptemplate.util.DummyContent;
 import com.csform.android.uiapptemplate.view.pzv.PullToZoomListViewEx;
 
 public class SpacesActivity extends ActionBarActivity {

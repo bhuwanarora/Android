@@ -1,8 +1,9 @@
 package com.csform.android.uiapptemplate.model;
 
-import java.util.ArrayList;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.ArrayList;
 
 public class ImageGalleryCategoryModel implements Parcelable {
 	

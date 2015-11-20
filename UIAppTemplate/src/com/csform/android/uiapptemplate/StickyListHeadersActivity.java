@@ -15,7 +15,6 @@
  */
 package com.csform.android.uiapptemplate;
 
-import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -28,6 +27,8 @@ import com.csform.android.uiapptemplate.util.DummyContent;
 import com.nhaarman.listviewanimations.appearance.StickyListHeadersAdapterDecorator;
 import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 import com.nhaarman.listviewanimations.util.StickyListHeadersListViewWrapper;
+
+import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 public class StickyListHeadersActivity extends ActionBarActivity {
 

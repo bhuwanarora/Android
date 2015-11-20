@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +12,9 @@ import android.widget.Toast;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.nhaarman.listviewanimations.util.Swappable;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ParallaxTravelAdapter extends BaseAdapter implements Swappable,
 		OnClickListener {

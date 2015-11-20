@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +15,9 @@ import com.csform.android.uiapptemplate.ImageGallerySubcategoryActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.adapter.SubcategoryAdapter;
 import com.csform.android.uiapptemplate.util.DummyContent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ImageGalleryFragment extends Fragment implements OnItemClickListener {
 	

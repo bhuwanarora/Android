@@ -1,8 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +13,9 @@ import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.util.Swappable;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class DragAndDropTravelAndSocialAdapter extends BaseAdapter implements
 		Swappable {

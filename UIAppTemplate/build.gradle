@@ -5,6 +5,8 @@ dependencies {
     compile project(':StickyListHeaders')
     compile project(':android-support-v7-appcompat')
     compile project(':volley')
+    compile 'com.android.support:recyclerview-v7:+'
+//    compile 'org.parceler:parceler:0.2.13'
 //    compile 'com.android.support:appcompat-v7:22.2.0'
 //    compile 'com.android.support:design:22.2.0'
 }

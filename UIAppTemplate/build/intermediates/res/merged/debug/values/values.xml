@@ -418,6 +418,7 @@
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="ProgressWheel"><attr format="string" name="text"/><attr format="color" name="textColor"/><attr format="dimension" name="textSize"/><attr format="color" name="barColor"/><attr format="color" name="rimColor"/><attr format="dimension" name="rimWidth"/><attr format="dimension" name="spinSpeed"/><attr format="integer" name="delayMillis"/><attr format="color" name="circleColor"/><attr format="dimension" name="radius"/><attr format="dimension" name="barWidth"/><attr format="dimension" name="barLength"/><attr format="color" name="contourColor"/><attr format="dimension" name="contourSize"/></declare-styleable>
     <declare-styleable name="PullToZoomView"><attr format="reference" name="headerView"/><attr format="reference" name="contentView"/><attr format="reference" name="zoomView"/><attr format="boolean" name="isHeaderParallax"/></declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="RobotoTextView"><attr format="enum" name="typeface"><enum name="robotoBlack" value="0"/><enum name="robotoBlackItalic" value="1"/><enum name="robotoBold" value="2"/><enum name="robotoBoldItalic" value="3"/><enum name="robotoBoldCondensed" value="4"/><enum name="robotoBoldCondensedItalic" value="5"/><enum name="robotoCondensed" value="6"/><enum name="robotoCondensedItalic" value="7"/><enum name="robotoItalic" value="8"/><enum name="robotoLight" value="9"/><enum name="robotoLightItalic" value="10"/><enum name="robotoMedium" value="11"/><enum name="robotoMediumItalic" value="12"/><enum name="robotoRegular" value="13"/><enum name="robotoThin" value="14"/><enum name="robotoThinItalic" value="15"/></attr></declare-styleable>
     <declare-styleable name="ScaledLinearLayout"><attr format="float" name="linear_layout_ratio"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
@@ -487,6 +488,11 @@
     <dimen name="drawer_width_shopping">320dp</dimen>
     <dimen name="drawer_width_social">260dp</dimen>
     <dimen name="drawer_width_travel">360dp</dimen>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/values/dimens.xml -->
+    <eat-comment/>
     <dimen name="ken_burns_header">250dp</dimen>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/res/values/values.xml -->
     <eat-comment/>
@@ -495,6 +501,11 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/res/values/values.xml -->
+    <eat-comment/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/values/attrs.xml -->

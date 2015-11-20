@@ -1,6 +1,9 @@
 package com.csform.android.uiapptemplate.model;
 
-import java.sql.Time;
+import com.csform.android.uiapptemplate.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class NewsModel {
 
@@ -11,6 +14,7 @@ public class NewsModel {
     private String mCreatedOn;
     private int mIconRes;
     private int mViewCount;
+    public static final String NoNewsFound = "No News Found";
 
     public NewsModel() {
     }
@@ -20,7 +24,7 @@ public class NewsModel {
         mImageURL = imageURL;
         mTitle = title;
         mDescription = description;
-        mCreatedOn = createdOn;
+        mCreatedOn = handleDateFormat(createdOn);
         mIconRes = iconRes;
         mViewCount = viewCount;
     }
@@ -42,6 +46,9 @@ public class NewsModel {
     }
 
     public String getTitle() {
+        if(mTitle.isEmpty()){
+            mTitle = NoNewsFound;
+        }
         return mTitle;
     }
 
@@ -66,7 +73,7 @@ public class NewsModel {
     }
 
     public void setCreatedOn(String mCreatedOn) {
-        this.mCreatedOn = mCreatedOn;
+        this.mCreatedOn = handleDateFormat(mCreatedOn);
     }
 
     public void setDescription(String mDescription) {
@@ -79,6 +86,14 @@ public class NewsModel {
 
     public void setViewCount(int mViewCount) {
         this.mViewCount = mViewCount;
+    }
+
+    public static NewsModel getEmptyNewsModel(){
+        return new NewsModel(0L, "", NoNewsFound, null, null, 0, R.string.fontello_heart_empty);
+    }
+
+    private String handleDateFormat(String createdOn){
+        return new SimpleDateFormat("dd MMM, yyyy").format(new Date(Long.valueOf(createdOn).longValue() * 1000L));
     }
 
     @Override
