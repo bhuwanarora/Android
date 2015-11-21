@@ -16,54 +16,94 @@
 
 -->
 <merge xmlns:android="http://schemas.android.com/apk/res/android" >
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
 
-        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <!-- FOOTER-->
+        <RelativeLayout
+            android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@color/main_color_600"
-            android:gravity="center_vertical" >
-
-            <com.csform.android.uiapptemplate.font.FontelloTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/fontello_search"
-                android:textColor="@color/main_color_800"
-                android:textSize="18dp"
-                tools:ignore="SpUsage" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:gravity="center"
+            android:background="#fff">
             <LinearLayout
-                android:focusable="true" android:focusableInTouchMode="true"
-                android:layout_width="0px" android:layout_height="0px"/>
-            <EditText
-                android:id="@+id/search_field"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_background_accent"
-                android:inputType="text"
-                android:textColor="#fff"
-                android:nextFocusUp="@id/search_field"
-                android:nextFocusLeft="@id/search_field"
-                android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
-            <com.csform.android.uiapptemplate.font.FontelloTextView
-                android:id="@+id/search_microfon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/fontello_microfon"
-                android:textColor="@color/main_color_800"
-                android:textSize="18dp"
-                tools:ignore="SpUsage" />
-        </LinearLayout>
-        <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
-            android:id="@+id/dynamic_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                android:orientation="vertical">
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:indeterminate="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
 
-    </LinearLayout>
+        </RelativeLayout>
+
+        <!-- CONTENT-->
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/footer"
+            android:gravity="center">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/main_color_600"
+                    android:gravity="center_vertical" >
+
+                    <com.csform.android.uiapptemplate.font.FontelloTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/fontello_search"
+                        android:textColor="@color/main_color_800"
+                        android:textSize="18dp"
+                        tools:ignore="SpUsage" />
+                    <LinearLayout
+                        android:focusable="true" android:focusableInTouchMode="true"
+                        android:layout_width="0px" android:layout_height="0px"/>
+                    <EditText
+                        android:id="@+id/search_field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background_accent"
+                        android:inputType="text"
+                        android:textColor="#fff"
+                        android:nextFocusUp="@id/search_field"
+                        android:nextFocusLeft="@id/search_field"
+                        android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
+                    <com.csform.android.uiapptemplate.font.FontelloTextView
+                        android:id="@+id/search_microfon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/fontello_microfon"
+                        android:textColor="@color/main_color_800"
+                        android:textSize="18dp"
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rv"/>
+
+                <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
+                    android:id="@+id/dynamic_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 </merge><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/spaces_list_views.xml -->

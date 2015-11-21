@@ -11,10 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:name="com.csform.android.uiapptemplate.util.AsyncContent"
         android:allowBackup="true"
@@ -47,6 +43,10 @@
         <activity
             android:name="com.csform.android.uiapptemplate.SpacesParallaxActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.csform.android.uiapptemplate.NewsArticleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoShadow" />
         <activity
             android:name="com.csform.android.uiapptemplate.SpacesActivity"
             android:screenOrientation="portrait" />

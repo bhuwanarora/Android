@@ -1,6 +1,7 @@
 package com.csform.android.uiapptemplate.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.NewsArticleActivity;
+import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.NewsModel;
 import com.nhaarman.listviewanimations.util.Swappable;
@@ -24,15 +27,16 @@ public class SpacesAdapter extends BaseAdapter implements Swappable,
     private LayoutInflater mInflater;
     private ArrayList<NewsModel> mNewsModelList;
     private static final String TAG = "SpacesAdapter";
+    public static String EXTRA_MESSAGE = "com.csform.android.uiapptemplate.MESSAGE";
 
     public SpacesAdapter(Context context,
-                                 ArrayList<NewsModel> NewsModelList,
+                                 ArrayList<NewsModel> newsModelList,
                                  boolean shouldShowDragAndDropIcon) {
-        Log.v(TAG, "Constructor NewsModelList " + NewsModelList);
+        Log.v(TAG, "Constructor NewsModelList " + newsModelList);
         mContext = context;
         mInflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mNewsModelList = NewsModelList;
+        mNewsModelList = newsModelList;
     }
 
     @Override
@@ -80,6 +84,9 @@ public class SpacesAdapter extends BaseAdapter implements Swappable,
         holder.title.setText(dm.getTitle());
         holder.createdOn.setText(dm.getCreatedOn());
         holder.description.setText(dm.getDescription());
+
+        holder.title.setTag(dm.getUrl());
+        holder.title.setOnClickListener(this);
         return convertView;
     }
 
@@ -92,10 +99,12 @@ public class SpacesAdapter extends BaseAdapter implements Swappable,
     }
 
     @Override
-    public void onClick(View v) {
-        // TODO Auto-generated method stub
-        Log.v(TAG, ""+v.getTag());
-        int position = (Integer) v.getTag();
+    public void onClick(View v){
+        Log.v(TAG, " onClick "+v.getTag());
+        String url = (String) v.getTag();
 
+        Intent intent = new Intent(mContext, NewsArticleActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, url);
+        mContext.startActivity(intent);
     }
 }

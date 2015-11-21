@@ -78,7 +78,7 @@ public class SpacesListAdapter extends BaseAdapter implements Swappable,
             convertView = mInflater.inflate(R.layout.list_item_spaces, parent, false);
             holder = new ViewHolder();
 
-            holder.layout = (LinearLayout) convertView.findViewById(R.id.layout_header_of_item);
+//            holder.layout = (LinearLayout) convertView.findViewById(R.id.layout_header_of_item);
             holder.photo = (ImageView) convertView.findViewById(R.id.lvis_photo);
             holder.name = (TextView) convertView.findViewById(R.id.lvis_name);
             holder.view_count = (TextView) convertView.findViewById(R.id.lvis_view_count);

@@ -52,7 +52,7 @@ public class AppContent {
                                     String newsURL = response.getJSONObject(i).getString("news_url");
                                     int bookmarkCount = response.getJSONObject(i).getInt("bookmark_count");
 
-                                    NewsModel newsModel = new NewsModel(id, imageURL, title, description, createdOn, viewCount, R.string.fontello_heart_empty);
+                                    NewsModel newsModel = new NewsModel(id, imageURL, title, description, createdOn, viewCount, R.string.fontello_heart_empty, newsURL);
 
                                 	list.add(newsModel);
                                 } catch (JSONException e) {

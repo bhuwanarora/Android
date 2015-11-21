@@ -3,12 +3,11 @@ package com.csform.android.uiapptemplate;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
 import android.util.TypedValue;
@@ -30,10 +29,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.csform.android.uiapptemplate.adapter.BookModel;
 import com.csform.android.uiapptemplate.adapter.SpacesAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.VideoAdapter;
 import com.csform.android.uiapptemplate.adapter.YearAdapter;
 import com.csform.android.uiapptemplate.model.NewsModel;
+import com.csform.android.uiapptemplate.model.VideoModel;
 import com.csform.android.uiapptemplate.util.AsyncContent;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.csform.android.uiapptemplate.view.AlphaForegroundColorSpan;
@@ -56,9 +59,10 @@ import java.util.Calendar;
 public class ParallaxKenBurnsActivity extends Activity {
 	
 	public static final String TAG = "PKBurnsActivity";
-	private static String newsId;
+	private static String spacesId;
 
 	private SpacesAdapter spacesAdapter;
+	private VideoAdapter videoAdapter;
 	private YearAdapter yearAdapter;
 	private static LinearLayout yearGallery = null;
 
@@ -69,9 +73,10 @@ public class ParallaxKenBurnsActivity extends Activity {
 	private ListView mListView;
 	private SeekBar volumeControl = null;
 	private KenBurnsView mHeaderPicture;
-	private ImageView mHeaderLogo;
+	private TextView mHeaderLogo;
 	private View mHeader;
 	private View mPlaceHolderView;
+	private RecyclerView recyclerView;
 	private AccelerateDecelerateInterpolator mSmoothInterpolator;
 	private RectF mRect1 = new RectF();
 	private RectF mRect2 = new RectF();
@@ -87,33 +92,44 @@ public class ParallaxKenBurnsActivity extends Activity {
 			JSONObject params = new JSONObject(intent.getStringExtra(SpacesListAdapter.EXTRA_MESSAGE));
 			String image_url = (String) params.get("image_url");
 			String name = (String) params.get("name");
-			newsId = (String) params.get("id");
+			spacesId = (String) params.get("id");
 
 			mSmoothInterpolator = new AccelerateDecelerateInterpolator();
-			mHeaderHeight = getResources().getDimensionPixelSize(
-					R.dimen.ken_burns_header);
+			mHeaderHeight = getResources().getDimensionPixelSize(R.dimen.ken_burns_header);
 			mMinHeaderTranslation = -mHeaderHeight + getActionBarHeight();
 			setContentView(R.layout.activity_parallax_ken_burns);
 			mListView = (ListView) findViewById(R.id.list_view);
-			RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
-			rv.setHasFixedSize(true);
+
+//			handleRecyclerView();
+
 			mHeader = findViewById(R.id.header);
 
 			mHeaderPicture = (KenBurnsView) findViewById(R.id.header_picture);
-//			ImageUtil.displayImage(mHeaderPicture, image_url, null);
+			ImageUtil.displayImage(mHeaderPicture, image_url, null);
 
-//			mHeaderPicture.setScaleType(ScaleType.CENTER_CROP);
-			mHeaderLogo = (ImageView) findViewById(R.id.header_logo);
+			mHeaderPicture.setScaleType(ScaleType.CENTER_CROP);
+			mHeaderLogo = (TextView) findViewById(R.id.header_logo);
+			mHeaderLogo.setText(name.toUpperCase());
+			mHeaderLogo.setTypeface(Typeface.DEFAULT_BOLD);
 			mActionBarTitleColor = Color.WHITE;
-			mSpannableString = new SpannableString(name.toUpperCase());
+//			mSpannableString = new SpannableString(name.toUpperCase());
 			mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(mActionBarTitleColor);
 			setupActionBar();
 			handleYearSlider();
-			setupListView(params);
+//			setupListView(params);
+			setUpVideosList(params);
 
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void handleRecyclerView(){
+//		recyclerView = (RecyclerView)findViewById(R.id.rv);
+//		recyclerView.setHasFixedSize(true);
+
+//		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ParallaxKenBurnsActivity.this);
+//		recyclerView.setLayoutManager(linearLayoutManager);
 	}
 
 	private void handleYearSlider(){
@@ -132,7 +148,7 @@ public class ParallaxKenBurnsActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					Integer year = Integer.parseInt((String) v.getTag());
-					spacesAdapter = new SpacesAdapter(ParallaxKenBurnsActivity.this, getNewsModelList(newsId, year), false);
+					spacesAdapter = new SpacesAdapter(ParallaxKenBurnsActivity.this, getNewsModelList(spacesId, year), false);
 					mListView.setAdapter(spacesAdapter);
 				}
 			});
@@ -154,22 +170,22 @@ public class ParallaxKenBurnsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void setupListView(JSONObject params){
+//	private void setupListView(JSONObject params){
+//		SpacesRecyclerAdapter adapter = new SpacesRecyclerAdapter(getNewsModelList(newsId, YearAdapter.endYear));
+//		recyclerView.setAdapter(adapter);
+//	}
+
+	private void setUpVideosList(JSONObject params){
 		mPlaceHolderView = getLayoutInflater().inflate(R.layout.header_fake, mListView, false);
-		spacesAdapter = new SpacesAdapter(this, getNewsModelList(newsId, YearAdapter.endYear), false);
-		mListView.setAdapter(spacesAdapter);
+		videoAdapter = new VideoAdapter(this, getVideosModelList(spacesId));
+		mListView.setAdapter(videoAdapter);
+		bindScrollListeners();
+	}
 
-		mListView.post(new Runnable() {
-			public void run() {
-				Log.v(TAG, "setupListView " + newsId + " items in the list " + spacesAdapter.getCount());
-
-				spacesAdapter.notifyDataSetChanged();
-			}
-		});
-
-		mListView.setOnScrollListener(new AbsListView.OnScrollListener(){
+	private void bindScrollListeners(){
+		mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
 			@Override
-			public void onScrollStateChanged(AbsListView view, int scrollState){
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
 			}
 
 			@Override
@@ -191,6 +207,61 @@ public class ParallaxKenBurnsActivity extends Activity {
 						Toast.LENGTH_SHORT).show();
 			}
 		});
+	}
+
+	private void setupListView(JSONObject params){
+		mPlaceHolderView = getLayoutInflater().inflate(R.layout.header_fake, mListView, false);
+		spacesAdapter = new SpacesAdapter(this, getNewsModelList(spacesId, YearAdapter.endYear), false);
+		mListView.setAdapter(spacesAdapter);
+		bindScrollListeners();
+	}
+
+	public ArrayList<BookModel> getBooksModelList(String spacesId){
+//		https://oditty.me/api/v0/basic_community_info?id=4998086
+		return null;
+	}
+
+	public ArrayList<VideoModel> getVideosModelList(String spacesId){
+		String tag_json_obj = "json_obj_req";
+		Log.d(TAG, "getVideosModelList for spaces_id " + spacesId);
+		String url = "https://oditty.me/api/v0/get_community_videos?id="+spacesId;
+		final ArrayList<VideoModel> list = new ArrayList<>();
+
+		JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+			url, null,
+			new Response.Listener<JSONArray>() {
+				@Override
+				public void onResponse(JSONArray response) {
+					int len = response.length();
+					for (int i=0;i<len;i++){
+						try {
+							String title = response.getJSONObject(i).getString("title");
+							String url = response.getJSONObject(i).getString("url");
+							String publisher = response.getJSONObject(i).getString("publisher");
+							String imageURL = response.getJSONObject(i).getString("thumbnail");
+							int duration = response.getJSONObject(i).getInt("duration");
+							String publishedDate = response.getJSONObject(i).getString("published_date");
+							VideoModel videoModel = new VideoModel(0L, imageURL, title, publisher, publishedDate, duration, R.string.fontello_heart_empty, url);
+							list.add(videoModel);
+							videoAdapter.notifyDataSetChanged();
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+					Log.d(TAG, response.toString());
+				}
+			}, new Response.ErrorListener() {
+
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				VolleyLog.d(TAG, "Error: " + error.getMessage());
+				// hide the progress dialog
+			}
+		});
+
+		// Adding request to request queue
+		AsyncContent.getInstance().addToRequestQueue(jsonArrayRequest, tag_json_obj);
+		return list;
 	}
 
 	public ArrayList<NewsModel> getNewsModelList(String spaces_id, int year){
@@ -228,7 +299,7 @@ public class ParallaxKenBurnsActivity extends Activity {
 										String newsURL = response.getJSONObject(i).getString("news_url");
 										int bookmarkCount = response.getJSONObject(i).getInt("bookmark_count");
 
-										NewsModel newsModel = new NewsModel(id, imageURL, title, description, createdOn, viewCount, R.string.fontello_heart_empty);
+										NewsModel newsModel = new NewsModel(id, imageURL, title, description, createdOn, viewCount, R.string.fontello_heart_empty, newsURL);
 
 										list.add(newsModel);
 										spacesAdapter.notifyDataSetChanged();
@@ -259,7 +330,7 @@ public class ParallaxKenBurnsActivity extends Activity {
 
 	private void setTitleAlpha(float alpha) {
 		mAlphaForegroundColorSpan.setAlpha(alpha);
-		mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//		mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		getActionBar().setTitle(mSpannableString);
 	}
 
@@ -270,18 +341,14 @@ public class ParallaxKenBurnsActivity extends Activity {
 	private void interpolate(View view1, View view2, float interpolation) {
 		setOnScreenRect(mRect1, view1);
 		setOnScreenRect(mRect2, view2);
-		float scaleX = 1.0F + interpolation
-				* (mRect2.width() / mRect1.width() - 1.0F);
-		float scaleY = 1.0F + interpolation
-				* (mRect2.height() / mRect1.height() - 1.0F);
-		float translationX = 0.5F * (interpolation * (mRect2.left
-				+ mRect2.right - mRect1.left - mRect1.right));
-		float translationY = 0.5F * (interpolation * (mRect2.top
-				+ mRect2.bottom - mRect1.top - mRect1.bottom));
-		view1.setTranslationX(translationX);
+		float scaleX = 1.0F + interpolation * (mRect2.width() / mRect1.width() - 1.0F);
+		float scaleY = 1.0F + interpolation * (mRect2.height() / mRect1.height() - 1.0F);
+		float translationX = 0.5F * (interpolation * (mRect2.left + mRect2.right - mRect1.left - mRect1.right));
+		float translationY = 0.5F * (interpolation * (mRect2.top + mRect2.bottom - mRect1.top - mRect1.bottom));
+//		view1.setTranslationX(translationX);
 		view1.setTranslationY(translationY - mHeader.getTranslationY());
-		view1.setScaleX(scaleX);
-		view1.setScaleY(scaleY);
+//		view1.setScaleX(scaleX);
+//		view1.setScaleY(scaleY);
 	}
 
 	private void setOnScreenRect(RectF rect, View view) {

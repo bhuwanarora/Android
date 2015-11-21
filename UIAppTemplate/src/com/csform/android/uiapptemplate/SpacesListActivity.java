@@ -2,10 +2,12 @@ package com.csform.android.uiapptemplate;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -15,6 +17,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.Space;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -24,6 +29,8 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.adapter.SearchAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
 import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.model.SearchItemAuthorModel;
 import com.csform.android.uiapptemplate.model.SearchItemBookModel;
@@ -49,13 +56,18 @@ public class SpacesListActivity extends Activity {
     public static final String LIST_VIEW_OPTION = "com.csform.android.uiapptemplate.ListViewsActivity";
     public static final String TAG = "SpacesListActivity";
 
-    private DynamicListView mDynamicListView;
-    private BaseAdapter adapter;
-    private SearchAdapter searchAdapter;
-
-    private EditText mSearchField;
-    private TextView mXMark;
-    private View mMicrofon;
+    private static DynamicListView mDynamicListView;
+    private static BaseAdapter adapter;
+    private static  SpacesRecyclerAdapter spacesRecyclerAdapter;
+    private static SearchAdapter searchAdapter;
+    private static int pastVisiblesItems, visibleItemCount, totalItemCount;
+    private static LinearLayoutManager linearLayoutManager;
+    private static boolean loading = false;
+    private static RecyclerView recyclerView;
+    private static EditText mSearchField;
+    private static TextView mXMark;
+    private static RelativeLayout footer;
+    private static ArrayList<SpacesModel> spacesModelsList = new ArrayList<SpacesModel>();
 
 //    @SuppressLint("NewApi")
     @Override
@@ -63,17 +75,20 @@ public class SpacesListActivity extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE); // Removing
         setContentView(R.layout.spaces_list_views);
-        mDynamicListView = (DynamicListView) findViewById(R.id.dynamic_listview);
+//        mDynamicListView = (DynamicListView) findViewById(R.id.dynamic_listview);
+
+        footer = (RelativeLayout) findViewById(R.id.footer);
         mSearchField = (EditText) findViewById(R.id.search_field);
         mSearchField.clearFocus();
-        mSearchField.setOnClickListener(new View.OnClickListener(){
+        mSearchField.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 handleEmptySearchText();
             }
         });
         bindSearchTextChangedListener();
-        setUpListView();
+        handleRecyclerView();
+//        setUpListView();
     }
 
     private void setUpListView(){
@@ -83,6 +98,41 @@ public class SpacesListActivity extends Activity {
         animAdapter.setAbsListView(mDynamicListView);
         mDynamicListView.setAdapter(animAdapter);
         Log.v(TAG, "setUpListView " + adapter.getCount());
+    }
+
+    private void handleRecyclerView(){
+		recyclerView = (RecyclerView)findViewById(R.id.rv);
+		recyclerView.setHasFixedSize(true);
+
+		linearLayoutManager = new LinearLayoutManager(SpacesListActivity.this);
+		recyclerView.setLayoutManager(linearLayoutManager);
+        setSpacesRecycleAdapter();
+        bindScrollListeners();
+    }
+
+    private void setSpacesRecycleAdapter(){
+        spacesRecyclerAdapter = new SpacesRecyclerAdapter(SpacesListActivity.this, getSpacesModelList());
+        recyclerView.setAdapter(spacesRecyclerAdapter);
+    }
+
+    private void bindScrollListeners(){
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy){
+                if(dy > 0){
+                    visibleItemCount = linearLayoutManager.getChildCount();
+                    totalItemCount = linearLayoutManager.getItemCount();
+                    pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
+                    if(!loading){
+                        if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
+                            loading = true;
+
+                            setSpacesRecycleAdapter();
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void setUpSearchItemListView(){
@@ -210,12 +260,11 @@ public class SpacesListActivity extends Activity {
     }
 
     private ArrayList<SpacesModel> getSpacesModelList() {
-        int skip = 0;
-
+        int skip = spacesModelsList.size();
+        footer.setVisibility(View.VISIBLE);
         String tag_json_obj = "json_obj_req";
         String url = "https://rooms.oditty.me/api/v0/get_rooms?skip="+skip;
-        final ArrayList<SpacesModel> list = new ArrayList<>();
-
+        Log.v(TAG, "FETCHING... getSpacesModelList skip "+skip);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
                 url, null,
                 new Response.Listener<JSONArray>() {
@@ -229,12 +278,15 @@ public class SpacesListActivity extends Activity {
                                 int id = response.getJSONObject(i).getInt("id");
                                 String image_url =  "http://rd-images.readersdoor.netdna-cdn.com/"+id+"/M.png";
                                 SpacesModel spacesModel = new SpacesModel(id, image_url, name, view_count, R.string.fontello_heart_empty);
-                                list.add(spacesModel);
-                                adapter.notifyDataSetChanged();
+                                spacesModelsList.add(spacesModel);
+//                                adapter.notifyDataSetChanged();
+                                spacesRecyclerAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
+                        loading = false;
+                        footer.setVisibility(View.GONE);
                         Log.d(TAG, response.toString());
                     }
                 }, new Response.ErrorListener() {
@@ -248,7 +300,8 @@ public class SpacesListActivity extends Activity {
 
         // Adding request to request queue
         AsyncContent.getInstance().addToRequestQueue(jsonArrayRequest, tag_json_obj);
-        return list;
+
+        return spacesModelsList;
     }
 
     private SearchItemModel handleSearchItemType(JSONObject response){

@@ -17,6 +17,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.adapter.DefaultAdapter;
@@ -40,7 +41,7 @@ public class SpacesParallaxActivity extends Activity {
     private int mMinHeaderTranslation;
     private ListView mListView;
     private KenBurnsView mHeaderPicture;
-    private ImageView mHeaderLogo;
+    private TextView mHeaderLogo;
     private View mHeader;
     private View mPlaceHolderView;
     private AccelerateDecelerateInterpolator mSmoothInterpolator;
@@ -65,7 +66,8 @@ public class SpacesParallaxActivity extends Activity {
         mHeaderPicture.setImageResource(R.drawable.background_small);
 
         mHeaderPicture.setScaleType(ScaleType.CENTER_CROP);
-        mHeaderLogo = (ImageView) findViewById(R.id.header_logo);
+        mHeaderLogo = (TextView) findViewById(R.id.header_logo);
+//        mHeaderLogo.setText(name);
         mActionBarTitleColor = Color.WHITE;
         mSpannableString = new SpannableString(
                 getString(R.string.app_name));
@@ -128,7 +130,7 @@ public class SpacesParallaxActivity extends Activity {
         mAlphaForegroundColorSpan.setAlpha(alpha);
         mSpannableString.setSpan(mAlphaForegroundColorSpan, 0,
                 mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        getActionBar().setTitle(mSpannableString);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public static float clamp(float value, float max, float min) {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    <com.csform.android.uiapptemplate.view.MaterialRippleLayout
+        style="@style/RippleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:rippleColor="@color/main_color_grey_400"
+        app:rippleAlpha="0.6"
+        android:background="@drawable/border"
+        app:rippleDuration="350">
+        <LinearLayout
+            android:id="@+id/lvis_video_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/lvis_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:contentDescription="@string/cd_main_image"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeight"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:text="VIDEO TITLE"
+                    android:textColor="@color/main_color_grey_500"
+                    android:textSize="16sp"
+                    app:typeface="robotoRegular" />
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_published_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:text="2 hours ago"
+                    android:textColor="@color/main_color_grey_500"
+                    android:textSize="12sp"
+                    app:typeface="robotoRegular" />
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:text="2 hours"
+                    android:textColor="@color/main_color_grey_500"
+                    android:textSize="15sp"
+                    app:typeface="robotoRegular" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.csform.android.uiapptemplate.view.MaterialRippleLayout>
+</LinearLayout><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/list_item_video.xml -->

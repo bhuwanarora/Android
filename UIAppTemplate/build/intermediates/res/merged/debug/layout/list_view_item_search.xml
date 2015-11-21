@@ -18,6 +18,7 @@
             app:rippleAlpha="0.6"
             app:rippleDuration="350">
             <LinearLayout
+                android:id="@+id/lvis_search_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

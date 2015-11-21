@@ -22,4 +22,4 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         style="?attr/actionModeStyle"/>
-<!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/android-support-v7-appcompat/res/layout/abc_action_mode_bar.xml --><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/oditty/android-support-v7-appcompat/unspecified/res/layout/abc_action_mode_bar.xml -->
+<!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/layout/abc_action_mode_bar.xml -->

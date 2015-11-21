@@ -41,6 +41,10 @@
             android:name=".SpacesParallaxActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".NewsArticleActivity"
+            android:theme="@style/AppTheme.NoShadow"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".SpacesActivity"
             android:screenOrientation="portrait" />
         <activity
