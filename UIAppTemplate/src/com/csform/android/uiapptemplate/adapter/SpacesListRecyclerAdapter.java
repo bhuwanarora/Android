@@ -1,11 +1,18 @@
 package com.csform.android.uiapptemplate.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.csform.android.uiapptemplate.NewsArticleActivity;
+import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
 
 import com.csform.android.uiapptemplate.model.NewsModel;
@@ -19,9 +26,13 @@ public class SpacesListRecyclerAdapter extends RecyclerView.Adapter<SpacesListRe
 
 
     ArrayList<NewsModel> newsModels;
+    Context mContext;
+    public static final String TAG = "SListRecyclerAdapter";
+    public static String EXTRA_MESSAGE = "com.csform.android.uiapptemplate.MESSAGE";
 
-    public SpacesListRecyclerAdapter(ArrayList<NewsModel> newsModels){
+    public SpacesListRecyclerAdapter(Context context, ArrayList<NewsModel> newsModels){
         this.newsModels = newsModels;
+        this.mContext = context;
     }
 
     @Override
@@ -37,7 +48,22 @@ public class SpacesListRecyclerAdapter extends RecyclerView.Adapter<SpacesListRe
         newsViewHolder.title.setText(newsModel.getTitle());
         newsViewHolder.createdOn.setText(newsModel.getCreatedOn());
         newsViewHolder.description.setText(newsModel.getDescription());
+
+        newsViewHolder.title.setTag(newsModel.getUrl());
+        newsViewHolder.title.setOnClickListener(clickListener);
     }
+
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(mContext, NewsArticleActivity.class);
+            Log.v(TAG, " onClick " + view.getTag());
+            String params = (String) view.getTag();
+
+            intent.putExtra(EXTRA_MESSAGE, params);
+            mContext.startActivity(intent);
+        }
+    };
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -50,12 +76,17 @@ public class SpacesListRecyclerAdapter extends RecyclerView.Adapter<SpacesListRe
     }
 
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
+        public CardView cardView;
         public TextView title;
         public TextView createdOn;
         public TextView description;
 
         NewsViewHolder(View itemView) {
             super(itemView);
+            cardView = (CardView) itemView.findViewById(R.id.cv);
+            title = (TextView) itemView.findViewById(R.id.lvis_title);
+            createdOn = (TextView) itemView.findViewById(R.id.lvis_created_on);
+            description = (TextView) itemView.findViewById(R.id.lvis_description);
         }
     }
 }

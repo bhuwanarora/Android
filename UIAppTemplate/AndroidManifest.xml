@@ -4,7 +4,7 @@
     android:versionCode="5"
     android:versionName="1.1">
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -70,15 +70,15 @@
         <activity
             android:name=".LeftMenusSocialActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LeftMenusMediaActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LeftMenusShoppingActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LeftMenusNewsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <!--<activity-->
+            <!--android:name=".LeftMenusMediaActivity"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+        <!--<activity-->
+            <!--android:name=".LeftMenusShoppingActivity"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+        <!--<activity-->
+            <!--android:name=".LeftMenusNewsActivity"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
         <activity android:name=".SearchBarsActivity" />
         <activity android:name=".CategoriesListViewActivity" />
         <activity android:name=".DragAndDropTravelAndSocialActivity" />

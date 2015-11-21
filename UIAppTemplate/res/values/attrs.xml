@@ -5,7 +5,7 @@
         <attr name="linear_layout_ratio" format="float" />
     </declare-styleable>
     <declare-styleable name="MaterialRippleLayout">
-        <attr name="rippleColor" format="color" />
+        <attr name="bRippleColor" format="color" />
         <attr name="rippleDimension" format="dimension" />
         <attr name="rippleOverlay" format="boolean" />
         <attr name="rippleAlpha" format="float" />
@@ -29,7 +29,7 @@
         <attr name="circleColor" format="color" />
         <attr name="radius" format="dimension" />
         <attr name="barWidth" format="dimension" />
-        <attr name="barLength" format="dimension" />
+        <attr name="bBarLength" format="dimension" />
         <attr name="contourColor" format="color" />
         <attr name="contourSize" format="dimension" />
     </declare-styleable>

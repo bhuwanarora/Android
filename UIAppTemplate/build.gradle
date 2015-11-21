@@ -4,15 +4,17 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile fileTree(dir: 'libs', include: '*.jar')
     compile project(':StickyListHeaders')
-    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.android.support:recyclerview-v7:23.1.0'
+
     compile 'com.android.support:support-annotations:23.1.0'
     compile project(':volley')
+    compile 'com.android.support:design:23.1.0'
 }
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion "21.1.0"
 
     defaultConfig{

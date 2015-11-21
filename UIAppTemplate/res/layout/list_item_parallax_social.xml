@@ -5,88 +5,92 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:orientation="vertical" >
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" >
-
-        <!--<ImageView-->
-            <!--android:id="@+id/lvis_image"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="160dp"-->
-            <!--android:contentDescription="@string/cd_main_image"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--android:src="@drawable/background_small" />-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="8dp"-->
-            <!--android:layout_marginRight="8dp"-->
-            <!--android:background="@drawable/social_top_background"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:minHeight="?android:attr/listPreferredItemHeight"-->
-            <!--android:orientation="vertical" >-->
+        android:id="@+id/cv"
+        android:background="#fff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
 
             <!--<ImageView-->
-                <!--android:id="@+id/lvis_photo"-->
+                <!--android:id="@+id/lvis_image"-->
                 <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="200dp"-->
-                <!--android:layout_marginLeft="0dp"-->
-                <!--android:layout_marginRight="0dp"-->
+                <!--android:layout_height="160dp"-->
                 <!--android:contentDescription="@string/cd_main_image"-->
-                <!--android:scaleType="centerCrop" />-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/background_small" />-->
 
-        <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:background="@drawable/social_top_background"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:minHeight="?android:attr/listPreferredItemHeight"-->
+                <!--android:orientation="vertical" >-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="vertical">
-            <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_title"
-                android:layout_width="wrap_content"
+                <!--<ImageView-->
+                    <!--android:id="@+id/lvis_photo"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_marginLeft="0dp"-->
+                    <!--android:layout_marginRight="0dp"-->
+                    <!--android:contentDescription="@string/cd_main_image"-->
+                    <!--android:scaleType="centerCrop" />-->
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="6dp"
-                android:paddingLeft="0dp"
-                android:text="NEWS TITLE"
-                android:textColor="@color/main_color_grey_700"
-                android:textSize="24sp"
-                app:typeface="robotoRegular" />
+                android:padding="10dp"
+                android:orientation="vertical">
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:paddingLeft="0dp"
+                    android:text="NEWS TITLE"
+                    android:textColor="@color/main_color_grey_700"
+                    android:textSize="24sp"
+                    app:typeface="robotoRegular" />
 
-            <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_created_on"
-                android:layout_width="wrap_content"
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_created_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:text="2 hours ago"
+                    android:textColor="@color/main_color_grey_500"
+                    android:textSize="12sp"
+                    app:typeface="robotoRegular" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="0dp"
-                android:text="2 hours ago"
-                android:textColor="@color/main_color_grey_500"
-                android:textSize="12sp"
-                app:typeface="robotoRegular" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeight"
+                android:orientation="horizontal" >
+                <com.csform.android.uiapptemplate.font.RobotoTextView
+                    android:id="@+id/lvis_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="0dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    android:textColor="@color/main_color_grey_500"
+                    android:textSize="18sp"
+                    app:typeface="robotoRegular" />
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:gravity="center_vertical"
-            android:minHeight="?android:attr/listPreferredItemHeight"
-            android:orientation="horizontal" >
-            <com.csform.android.uiapptemplate.font.RobotoTextView
-                android:id="@+id/lvis_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="0dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                android:textColor="@color/main_color_grey_500"
-                android:textSize="18sp"
-                app:typeface="robotoRegular" />
-        </LinearLayout>
-    </LinearLayout>
-
+    </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -88,16 +88,6 @@ public class SpacesListActivity extends Activity {
         });
         bindSearchTextChangedListener();
         handleRecyclerView();
-//        setUpListView();
-    }
-
-    private void setUpListView(){
-        adapter = new SpacesListAdapter(this, getSpacesModelList(), false);
-        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
-
-        animAdapter.setAbsListView(mDynamicListView);
-        mDynamicListView.setAdapter(animAdapter);
-        Log.v(TAG, "setUpListView " + adapter.getCount());
     }
 
     private void handleRecyclerView(){
@@ -126,7 +116,6 @@ public class SpacesListActivity extends Activity {
                     if(!loading){
                         if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
                             loading = true;
-
                             setSpacesRecycleAdapter();
                         }
                     }

@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -73,15 +73,15 @@
         <activity
             android:name="com.csform.android.uiapptemplate.LeftMenusSocialActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusMediaActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusShoppingActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusNewsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- <activity -->
+        <!-- android:name=".LeftMenusMediaActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LeftMenusShoppingActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".LeftMenusNewsActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
         <activity android:name="com.csform.android.uiapptemplate.SearchBarsActivity" />
         <activity android:name="com.csform.android.uiapptemplate.CategoriesListViewActivity" />
         <activity android:name="com.csform.android.uiapptemplate.DragAndDropTravelAndSocialActivity" />

@@ -6,7 +6,7 @@
     <style name="ProgressBarStyle">
         <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">40dp</item>
-        <item name="barLength">20dp</item>
+        <item name="bBarLength">20dp</item>
         <item name="barWidth">6dp</item>
         <item name="contourColor">@android:color/transparent</item>
         <item name="contourSize">0dp</item>

@@ -99,10 +99,10 @@
                     android:layout_height="match_parent"
                     android:id="@+id/rv"/>
 
-                <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
-                    android:id="@+id/dynamic_listview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                <!--<com.nhaarman.listviewanimations.itemmanipulation.DynamicListView-->
+                    <!--android:id="@+id/dynamic_listview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent" />-->
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
