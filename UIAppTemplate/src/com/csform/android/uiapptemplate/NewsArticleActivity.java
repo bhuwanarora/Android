@@ -16,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.csform.android.uiapptemplate.adapter.NewsArticleAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesNewsRecyclerAdapter;
 import com.csform.android.uiapptemplate.util.AsyncContent;
 
 import org.json.JSONException;
@@ -43,7 +43,7 @@ public class NewsArticleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
-        String url = intent.getStringExtra(SpacesListRecyclerAdapter.EXTRA_MESSAGE);
+        String url = intent.getStringExtra(SpacesNewsRecyclerAdapter.EXTRA_MESSAGE);
         Log.v(TAG, "onCreate " + url);
         setContentView(R.layout.news_article_activity);
         textView = (TextView) findViewById(R.id.news_article);

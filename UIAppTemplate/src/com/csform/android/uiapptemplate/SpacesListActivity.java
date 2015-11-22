@@ -31,8 +31,6 @@ import com.csform.android.uiapptemplate.model.SearchItemNewsModel;
 import com.csform.android.uiapptemplate.model.SearchItemSpacesModel;
 import com.csform.android.uiapptemplate.model.SpacesModel;
 import com.csform.android.uiapptemplate.util.AsyncContent;
-import com.nhaarman.listviewanimations.appearance.AnimationAdapter;
-import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
 
 import org.json.JSONArray;

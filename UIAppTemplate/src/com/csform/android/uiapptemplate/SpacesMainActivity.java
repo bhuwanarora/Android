@@ -43,15 +43,16 @@ public class SpacesMainActivity extends AppCompatActivity {
         try {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
+
             Intent intent = getIntent();
             JSONObject params = new JSONObject(intent.getStringExtra(SpacesRecyclerAdapter.EXTRA_MESSAGE));
             String image_url = (String) params.get("image_url");
             String name = (String) params.get("name");
             String spacesId = (String) params.get("id");
 
+            toolbar.setTitle(name);
             mHeaderPicture = (KenBurnsView) findViewById(R.id.header_picture);
             ImageUtil.displayImage(mHeaderPicture, image_url, null);
-
             mHeaderPicture.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
             // Create the adapter that will return a fragment for each of the three

@@ -20,7 +20,6 @@ android/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidato
 android/support/v7/widget/RecyclerView$AdapterDataObservable.class
 android/support/annotation/RequiresPermission.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
-com/csform/android/uiapptemplate/adapter/SpacesListRecyclerAdapter.class
 android/support/v4/app/FragmentManagerImpl$3.class
 android/support/design/widget/AppBarLayout.class
 android/support/v4/os/TraceCompat.class
@@ -395,6 +394,7 @@ android/support/v4/media/RatingCompat$1.class
 android/support/v7/widget/RecyclerView$RecyclerViewDataObserver.class
 android/support/v7/widget/RecyclerView$SimpleOnItemTouchListener.class
 android/support/v4/view/ViewConfigurationCompat.class
+com/csform/android/uiapptemplate/adapter/SpacesNewsRecyclerAdapter.class
 android/support/v7/app/ActionBar$DisplayOptions.class
 android/support/annotation/CheckResult.class
 android/support/v4/app/BaseFragmentActivityHoneycomb.class

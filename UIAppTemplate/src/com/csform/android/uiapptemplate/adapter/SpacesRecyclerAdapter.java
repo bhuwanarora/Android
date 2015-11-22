@@ -15,6 +15,7 @@ import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.SpacesMainActivity;
 import com.csform.android.uiapptemplate.model.SpacesModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
+import com.csform.android.uiapptemplate.util.WordUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,13 +49,15 @@ public class SpacesRecyclerAdapter extends RecyclerView.Adapter<SpacesRecyclerAd
     public void onBindViewHolder(SpacesRecyclerAdapter.SpacesViewHolder spacesViewHolder, int position) {
         try {
             SpacesModel spacesModel = spacesModels.get(position);
-            spacesViewHolder.name.setText(spacesModel.getName());
+
+            String name = WordUtil.capitalize(spacesModel.getName());
+
+            spacesViewHolder.name.setText(name);
             spacesViewHolder.viewCount.setText(String.valueOf(spacesModel.getViewCount()) + " Views");
             ImageUtil.displayRoundImage(spacesViewHolder.photo, spacesModel.getImageURL(), null);
 
             JSONObject params = new JSONObject();
             String id = Long.toString(spacesModel.getId());
-            String name = spacesModel.getName();
             String image_url = spacesModel.getImageURL();
             params.put("id", id);
             params.put("name", name);
@@ -66,6 +69,7 @@ public class SpacesRecyclerAdapter extends RecyclerView.Adapter<SpacesRecyclerAd
             e.printStackTrace();
         }
     }
+
 
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override

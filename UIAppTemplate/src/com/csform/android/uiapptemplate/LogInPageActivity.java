@@ -29,14 +29,12 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
 	private void setContentView(){
 		setContentView(R.layout.activity_login_page_light);
-		TextView login, register, skip;
+		TextView login, register;
 		login = (TextView) findViewById(R.id.login);
 		register = (TextView) findViewById(R.id.register);
-		skip = (TextView) findViewById(R.id.skip);
 
 		login.setOnClickListener(this);
 		register.setOnClickListener(this);
-		skip.setOnClickListener(this);
 	}
 
 	@Override
@@ -47,7 +45,7 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
 		if (v instanceof TextView) {
 			TextView tv = (TextView) v;
-			Toast.makeText(this, tv.getText(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "WELCOME", Toast.LENGTH_SHORT).show();
 		}
 	}
 }

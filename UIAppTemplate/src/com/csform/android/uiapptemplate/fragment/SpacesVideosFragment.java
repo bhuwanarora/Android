@@ -20,7 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesNewsRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.VideoAdapter;
 import com.csform.android.uiapptemplate.adapter.YearAdapter;
 import com.csform.android.uiapptemplate.model.NewsModel;
@@ -47,7 +47,6 @@ public class SpacesVideosFragment extends Fragment {
     private static LinearLayoutManager linearLayoutManager;
     private static boolean loading = false;
     private static ArrayList<NewsModel> newsModelList = new ArrayList<NewsModel>();
-    private static SpacesListRecyclerAdapter spacesListRecyclerAdapter;
     private static ProgressBar progressBar;
     private VideoAdapter videoAdapter;
     private Boolean isVisible = false;
@@ -86,7 +85,7 @@ public class SpacesVideosFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         Intent intent = getActivity().getIntent();
         try {
-            JSONObject params = new JSONObject(intent.getStringExtra(SpacesListRecyclerAdapter.EXTRA_MESSAGE));
+            JSONObject params = new JSONObject(intent.getStringExtra(SpacesNewsRecyclerAdapter.EXTRA_MESSAGE));
             String image_url = (String) params.get("image_url");
             String name = (String) params.get("name");
             spacesId = (String) params.get("id");

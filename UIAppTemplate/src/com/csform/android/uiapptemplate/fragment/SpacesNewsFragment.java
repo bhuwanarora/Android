@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesNewsRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.YearAdapter;
 import com.csform.android.uiapptemplate.model.NewsModel;
@@ -50,7 +50,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
     private static LinearLayoutManager linearLayoutManager;
     private static boolean loading = false;
     private static ArrayList<NewsModel> newsModelList = new ArrayList<NewsModel>();
-    private static SpacesListRecyclerAdapter spacesListRecyclerAdapter;
+    private static SpacesNewsRecyclerAdapter spacesNewsRecyclerAdapter;
     private static ProgressBar progressBar;
     private static View view;
     private Boolean isStarted = false;
@@ -156,7 +156,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
                 @Override
                 public void onClick(View v) {
                     newsModelList = new ArrayList<NewsModel>();
-                    spacesListRecyclerAdapter.notifyDataSetChanged();
+                    spacesNewsRecyclerAdapter.notifyDataSetChanged();
 
                     Integer year = Integer.parseInt((String) v.getTag());
                     setNewsModelRecycleAdapter(year);
@@ -173,14 +173,14 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
 
     private void setNewsModelRecycleAdapter(){
         newsModelList = getNewsModelList(String.valueOf(spacesId), YearAdapter.endYear);
-        spacesListRecyclerAdapter = new SpacesListRecyclerAdapter(getActivity(), newsModelList);
-        recyclerView.setAdapter(spacesListRecyclerAdapter);
+        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList);
+        recyclerView.setAdapter(spacesNewsRecyclerAdapter);
     }
 
     private void setNewsModelRecycleAdapter(int year){
         newsModelList = getNewsModelList(String.valueOf(spacesId), year);
-        spacesListRecyclerAdapter = new SpacesListRecyclerAdapter(getActivity(), newsModelList);
-        recyclerView.setAdapter(spacesListRecyclerAdapter);
+        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList);
+        recyclerView.setAdapter(spacesNewsRecyclerAdapter);
     }
 
     public ArrayList<NewsModel> getNewsModelList(String spaces_id, int year){
@@ -201,7 +201,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
                             if(response.toString().equals("{}")){
                                 NewsModel newsModel = NewsModel.getEmptyNewsModel();
                                 newsModelList.add(newsModel);
-                                spacesListRecyclerAdapter.notifyDataSetChanged();
+                                spacesNewsRecyclerAdapter.notifyDataSetChanged();
                             }
                             else{
                                 response = response.getJSONObject(0).getJSONArray("news");
@@ -222,7 +222,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
 
                                         newsModelList.add(newsModel);
                                         Log.v(TAG, "getNewsModelList " + newsModelList.size());
-                                        spacesListRecyclerAdapter.notifyDataSetChanged();
+                                        spacesNewsRecyclerAdapter.notifyDataSetChanged();
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
