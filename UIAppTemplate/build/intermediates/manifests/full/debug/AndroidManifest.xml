@@ -29,6 +29,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.csform.android.uiapptemplate.SpacesMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name="com.csform.android.uiapptemplate.ParallaxKenBurnsActivity"
             android:theme="@style/AppTheme.Overlay" />
         <activity android:name="com.csform.android.uiapptemplate.ParallaxActivity" />

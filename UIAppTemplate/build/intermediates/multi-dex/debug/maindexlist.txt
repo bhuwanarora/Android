@@ -29,7 +29,6 @@ android/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidato
 android/support/v7/widget/RecyclerView$AdapterDataObservable.class
 android/support/annotation/RequiresPermission.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
-com/csform/android/uiapptemplate/adapter/SpacesListRecyclerAdapter.class
 android/support/v4/app/FragmentManagerImpl$3.class
 com/csform/android/uiapptemplate/LeftMenusSocialActivity$1.class
 android/support/design/widget/AppBarLayout.class
@@ -47,7 +46,6 @@ com/csform/android/uiapptemplate/adapter/SpacesAdapter.class
 android/support/annotation/Size.class
 com/nhaarman/listviewanimations/util/StickyListHeadersListViewWrapper.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
-com/csform/android/uiapptemplate/ParallaxKenBurnsActivity$5.class
 com/nhaarman/listviewanimations/appearance/StickyListHeadersAdapterDecorator.class
 android/support/design/widget/ViewOffsetBehavior.class
 -keep class com.csform.android.uiapptemplate.GoogleCardsTravelActivity { <init>(); }
@@ -56,7 +54,6 @@ android/support/v4/app/FragmentContainer.class
 com/csform/android/uiapptemplate/SearchBarsActivity.class
 com/csform/android/uiapptemplate/DragAndDropTravelAndSocialActivity$2.class
 android/support/v4/media/RatingCompatApi21.class
-com/csform/android/uiapptemplate/ParallaxKenBurnsActivity$4.class
 android/support/design/R$layout.class
 android/support/v4/view/ViewCompat$MarshmallowViewCompatImpl.class
 android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
@@ -157,6 +154,7 @@ android/support/v4/app/FragmentActivity.class
 -keep class com.csform.android.uiapptemplate.DragAndDropTravelAndSocialActivity { <init>(); }
 android/support/design/widget/SnackbarManager$Callback.class
 com/csform/android/uiapptemplate/view/pzv/IPullToZoom.class
+com/csform/android/uiapptemplate/adapter/SearchRecyclerAdapter.class
 android/support/v4/media/MediaBrowserCompat$MediaItem$Flags.class
 android/support/v7/app/ActionBar$LayoutParams.class
 android/support/v4/media/MediaMetadataCompat.class
@@ -183,13 +181,11 @@ android/support/v4/app/BaseFragmentActivityDonut.class
 android/support/v4/media/VolumeProviderCompat$Callback.class
 com/csform/android/uiapptemplate/ExpandableSocialListViewActivity$GroupHolder.class
 com/csform/android/uiapptemplate/MainActivity.class
-com/csform/android/uiapptemplate/adapter/YearAdapter.class
 android/support/design/widget/AppBarLayout$LayoutParams.class
 android/support/v7/widget/RecyclerView$ItemAnimator.class
 -keep class com.csform.android.uiapptemplate.RegisterPageActivity { <init>(); }
 com/android/volley/Response$ErrorListener.class
 com/csform/android/uiapptemplate/CategoriesListViewActivity.class
-com/csform/android/uiapptemplate/view/MaterialRippleLayout.class
 -keep class com.csform.android.uiapptemplate.HomePageActivity { <init>(); }
 android/support/v7/widget/RecyclerView$ItemAnimator$ItemAnimatorFinishedListener.class
 android/support/v4/view/ViewCompat$ICSViewCompatImpl.class
@@ -197,8 +193,10 @@ com/csform/android/uiapptemplate/fragment/ShapeImageViewsFragment.class
 com/csform/android/uiapptemplate/LeftMenusTravelActivity$1.class
 android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
 com/csform/android/uiapptemplate/ExpandableTravelListViewActivity$GroupItem.class
+com/csform/android/uiapptemplate/SpacesMainActivity.class
 android/support/v7/widget/LinearLayoutCompat.class
 android/support/annotation/Keep.class
+android/support/v4/app/FragmentPagerAdapter.class
 android/support/v4/view/AccessibilityDelegateCompat.class
 android/support/annotation/IntDef.class
 com/nhaarman/listviewanimations/itemmanipulation/swipedismiss/undo/SimpleSwipeUndoAdapter.class
@@ -236,13 +234,13 @@ android/support/v4/app/FragmentManager$OnBackStackChangedListener.class
 com/nhaarman/listviewanimations/appearance/ViewAnimator.class
 android/support/v7/app/ActionBar$Tab.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase.class
+com/csform/android/uiapptemplate/SpacesListActivity$10.class
 android/support/v4/app/AppOpsManagerCompat.class
 android/support/design/widget/SwipeDismissBehavior.class
 -keep class com.csform.android.uiapptemplate.ParallaxKenBurnsActivity { <init>(); }
 android/support/v4/app/FragmentActivity$1.class
 -keep class com.csform.android.uiapptemplate.CategoriesListViewActivity { <init>(); }
 com/nostra13/universalimageloader/core/ImageLoaderConfiguration.class
-com/csform/android/uiapptemplate/adapter/VideoAdapter.class
 com/csform/android/uiapptemplate/SpacesListActivity$1.class
 android/support/design/widget/Snackbar$SnackbarLayout.class
 com/nhaarman/listviewanimations/itemmanipulation/dragdrop/DraggableManager.class
@@ -376,7 +374,6 @@ com/csform/android/uiapptemplate/adapter/SpacesListAdapter.class
 -keep class com.csform.android.uiapptemplate.NewsArticleActivity { <init>(); }
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase.class
 android/support/design/widget/CoordinatorLayout$OnPreDrawListener.class
-com/csform/android/uiapptemplate/adapter/SearchAdapter.class
 android/support/v4/app/FragmentState.class
 com/nhaarman/listviewanimations/appearance/simple/SwingBottomInAnimationAdapter.class
 android/support/v4/view/ViewCompatICS.class
@@ -481,13 +478,13 @@ android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
 com/csform/android/uiapptemplate/adapter/SubcategoryAdapter.class
 android/support/design/R$style.class
 com/nhaarman/listviewanimations/util/Insertable.class
+com/csform/android/uiapptemplate/adapter/SectionsPagerAdapter.class
 android/support/design/widget/TabLayout$TabGravity.class
 com/csform/android/uiapptemplate/ParallaxSocialActivity.class
 android/support/design/widget/TabLayout$SlidingTabStrip.class
 android/support/v7/app/ActionBar$TabListener.class
 android/support/v4/media/MediaMetadataCompatApi21.class
 android/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener.class
-com/csform/android/uiapptemplate/ParallaxKenBurnsActivity$6.class
 android/support/design/widget/CoordinatorLayout$ApplyInsetsListener.class
 android/support/design/widget/AppBarLayout$Behavior$DragCallback.class
 android/support/design/widget/Snackbar$9.class
@@ -522,6 +519,7 @@ android/support/v4/view/ViewCompat$HCViewCompatImpl.class
 android/support/design/widget/AnimationUtils.class
 android/support/v4/media/VolumeProviderCompatApi21.class
 com/csform/android/uiapptemplate/LogInPageActivity.class
+-keep class com.csform.android.uiapptemplate.SpacesMainActivity { <init>(); }
 android/support/design/widget/CoordinatorLayoutInsetsHelper.class
 android/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener.class
 android/support/v4/media/MediaMetadataCompat$RatingKey.class

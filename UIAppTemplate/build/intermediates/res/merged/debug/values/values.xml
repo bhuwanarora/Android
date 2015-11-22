@@ -775,6 +775,7 @@
     <string name="password">Password</string>
     <string name="raised">RAISED</string>
     <string name="register">REGISTER</string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="skip">SKIP</string>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
@@ -827,6 +828,7 @@
 	    <item name="colorPrimary">@color/main_color_500</item>
 	    <item name="colorPrimaryDark">@color/main_color_700</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/ActionBarStyle</item>
         <item name="windowActionBar">false</item>
@@ -844,6 +846,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppTheme.Title" parent="Theme.AppCompat">
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>

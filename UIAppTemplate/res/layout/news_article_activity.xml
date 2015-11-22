@@ -7,6 +7,18 @@ android:background="#fff">
     <LinearLayout android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:max="500"
+            android:visibility="gone"
+            android:progress="0"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/circular" />
         <TextView
             android:id="@+id/news_article_title"
             android:layout_width="match_parent"
@@ -16,6 +28,7 @@ android:background="#fff">
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp" />
+
         <TextView
             android:id="@+id/news_article"
             android:layout_width="match_parent"

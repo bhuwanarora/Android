@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
 
+import com.csform.android.uiapptemplate.SpacesMainActivity;
 import com.csform.android.uiapptemplate.model.SpacesModel;
 import com.csform.android.uiapptemplate.util.CustomOnClickListener;
 import com.csform.android.uiapptemplate.util.ImageUtil;
@@ -74,7 +75,7 @@ public class SpacesRecyclerAdapter extends RecyclerView.Adapter<SpacesRecyclerAd
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(mContext, ParallaxKenBurnsActivity.class);
+            Intent intent = new Intent(mContext, SpacesMainActivity.class);
             Log.v(TAG, " onClick " + view.getTag());
             String params = (String) view.getTag();
 

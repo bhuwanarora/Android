@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.csform.android.uiapptemplate.NewsArticleActivity;
 import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
@@ -21,6 +22,7 @@ import com.csform.android.uiapptemplate.model.NewsModel;
 import com.csform.android.uiapptemplate.model.VideoModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.util.Swappable;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +34,7 @@ public class VideoAdapter extends BaseAdapter implements Swappable,
     private LayoutInflater mInflater;
     private ArrayList<VideoModel> mVideosModelList;
     private static final String TAG = "VideoAdapter";
+    private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
     public static String EXTRA_MESSAGE = "com.csform.android.uiapptemplate.MESSAGE";
 
     public VideoAdapter(Context context, ArrayList<VideoModel> videosModelList) {
@@ -40,6 +43,8 @@ public class VideoAdapter extends BaseAdapter implements Swappable,
         mInflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mVideosModelList = videosModelList;
+//        imageLoader = com.nostra13.universalimageloader.core.ImageLoader.getInstance();
+//        imageLoader.init(ImageLoaderConfiguration.createDefault(context));
     }
 
     @Override
@@ -69,6 +74,7 @@ public class VideoAdapter extends BaseAdapter implements Swappable,
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         Log.v(TAG, " getView " + position + " convertView " + convertView);
         final ViewHolder holder;
         if (convertView == null) {

@@ -3,6 +3,7 @@
     void attachBaseContext(android.content.Context);
 }
 -keep class com.csform.android.uiapptemplate.LogInPageActivity { <init>(); }
+-keep class com.csform.android.uiapptemplate.SpacesMainActivity { <init>(); }
 -keep class com.csform.android.uiapptemplate.ParallaxKenBurnsActivity { <init>(); }
 -keep class com.csform.android.uiapptemplate.ParallaxActivity { <init>(); }
 -keep class com.csform.android.uiapptemplate.ParallaxTravelActivity { <init>(); }

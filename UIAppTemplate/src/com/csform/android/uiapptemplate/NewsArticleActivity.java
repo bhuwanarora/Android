@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +51,7 @@ import org.json.JSONObject;
  * @author MLADJO
  *
  */
-public class NewsArticleActivity extends ActionBarActivity {
+public class NewsArticleActivity extends AppCompatActivity {
 
     public static final String TAG = "NewsArticleActivity";
     private TextView textView;
@@ -57,6 +59,7 @@ public class NewsArticleActivity extends ActionBarActivity {
     private NewsArticleAdapter newsArticleAdapter;
     private final static String baseUrl = "https://api.embed.ly/1/extract?key=0038e86d5e754f8d9a0c3823e338563d&url=";
     private final static String returnType = "format=json";
+    private static ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class NewsArticleActivity extends ActionBarActivity {
         setContentView(R.layout.news_article_activity);
         textView = (TextView) findViewById(R.id.news_article);
         textViewTitle = (TextView) findViewById(R.id.news_article_title);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         getArticle(url);
     }
 
@@ -75,6 +80,7 @@ public class NewsArticleActivity extends ActionBarActivity {
         String fetchUrl = baseUrl + url + "&" + returnType;
         String tag_json_obj = "json_obj_req";
         final String[] article = {""};
+        progressBar.setVisibility(View.VISIBLE);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                 fetchUrl, null,
                 new Response.Listener<JSONObject>(){
@@ -89,6 +95,7 @@ public class NewsArticleActivity extends ActionBarActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        progressBar.setVisibility(View.GONE);
                     }
                 }, new Response.ErrorListener(){
             @Override

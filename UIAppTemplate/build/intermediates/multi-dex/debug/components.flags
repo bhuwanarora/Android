@@ -20,6 +20,10 @@
     <init>();
 }
 
+-keep class com.csform.android.uiapptemplate.SpacesMainActivity {
+    <init>();
+}
+
 -keep class com.csform.android.uiapptemplate.ParallaxKenBurnsActivity {
     <init>();
 }

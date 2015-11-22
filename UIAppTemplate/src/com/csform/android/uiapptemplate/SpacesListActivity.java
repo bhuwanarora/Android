@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -28,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.adapter.SearchAdapter;
+import com.csform.android.uiapptemplate.adapter.SearchRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
@@ -59,6 +61,7 @@ public class SpacesListActivity extends Activity {
     private static DynamicListView mDynamicListView;
     private static BaseAdapter adapter;
     private static  SpacesRecyclerAdapter spacesRecyclerAdapter;
+    private static SearchRecyclerAdapter searchRecyclerAdapter;
     private static SearchAdapter searchAdapter;
     private static int pastVisiblesItems, visibleItemCount, totalItemCount;
     private static LinearLayoutManager linearLayoutManager;
@@ -68,6 +71,9 @@ public class SpacesListActivity extends Activity {
     private static TextView mXMark;
     private static RelativeLayout footer;
     private static ArrayList<SpacesModel> spacesModelsList = new ArrayList<SpacesModel>();
+    private static ArrayList<SearchItemModel> searchItemModelsList = new ArrayList<SearchItemModel>();
+    private static Button backButton;
+    private static String searchText;
 
 //    @SuppressLint("NewApi")
     @Override
@@ -83,11 +89,33 @@ public class SpacesListActivity extends Activity {
         mSearchField.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setBackButtonVisible();
                 handleEmptySearchText();
             }
         });
+        backButton = (Button) findViewById(R.id.backButton);
+        bindClickListenerOnBackButton();
         bindSearchTextChangedListener();
         handleRecyclerView();
+    }
+
+    private void setBackButtonVisible(){
+        if(backButton.getVisibility() != View.VISIBLE){
+            backButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void bindClickListenerOnBackButton(){
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSearchField.setText("");
+                searchItemModelsList = new ArrayList<SearchItemModel>();
+                mSearchField.clearFocus();
+                backButton.setVisibility(View.GONE);
+                setSpacesRecycleAdapter();
+            }
+        });
     }
 
     private void handleRecyclerView(){
@@ -106,17 +134,21 @@ public class SpacesListActivity extends Activity {
     }
 
     private void bindScrollListeners(){
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy){
-                if(dy > 0){
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (dy > 0) {
                     visibleItemCount = linearLayoutManager.getChildCount();
                     totalItemCount = linearLayoutManager.getItemCount();
                     pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
-                    if(!loading){
-                        if((visibleItemCount + pastVisiblesItems) >= totalItemCount){
+                    if (!loading) {
+                        if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                             loading = true;
-                            setSpacesRecycleAdapter();
+                            if (backButton.getVisibility() == View.VISIBLE) {
+                                addSearchResults();
+                            } else {
+                                setSpacesRecycleAdapter();
+                            }
                         }
                     }
                 }
@@ -145,24 +177,34 @@ public class SpacesListActivity extends Activity {
             @SuppressLint("DefaultLocale")
             @Override
             public void afterTextChanged(Editable editable) {
-                String searchText = editable.toString().trim();
-                Log.v(TAG, "afterTextChanged "+searchText);
+                setBackButtonVisible();
+                searchText = editable.toString().trim();
+                Log.v(TAG, "afterTextChanged " + searchText);
                 if (searchText.isEmpty()) {
                     handleEmptySearchText();
-                }
-                else{
-                    searchAdapter = new SearchAdapter(SpacesListActivity.this, getSearchResults(searchText));
-                    setUpSearchItemListView();
+                } else {
+//                    searchAdapter = new SearchAdapter(SpacesListActivity.this, getSearchResults(searchText));
+//                    setUpSearchItemListView();
+                    if(!searchItemModelsList.isEmpty()){
+                        searchItemModelsList = new ArrayList<SearchItemModel>();
+                        searchRecyclerAdapter.notifyDataSetChanged();
+                    }
+                    addSearchResults();
                 }
             }
         });
     }
 
+    private void addSearchResults(){
+        searchRecyclerAdapter = new SearchRecyclerAdapter(SpacesListActivity.this, getSearchResults(searchText));
+        recyclerView.setAdapter(searchRecyclerAdapter);
+    }
+
     private void handleEmptySearchText(){
         String currentSearchText = mSearchField.getText().toString().trim();
         if(currentSearchText.isEmpty()){
-            searchAdapter = new SearchAdapter(SpacesListActivity.this, getTopSearchResults());
-            setUpSearchItemListView();
+            searchRecyclerAdapter = new SearchRecyclerAdapter(SpacesListActivity.this, getTopSearchResults());
+            recyclerView.setAdapter(searchRecyclerAdapter);
         }
     }
 
@@ -177,9 +219,11 @@ public class SpacesListActivity extends Activity {
 
     private ArrayList<SearchItemModel> getSearchResults(String searchText) {
         Log.v(TAG, "getSearchResults " + searchText);
-        final ArrayList<SearchItemModel> list = new ArrayList<>();
-        String url = "https://searchservice.oditty.me/api/v0/search?q="+searchText+"&count=4";
+        int skip = searchItemModelsList.size();
+        String url = "https://searchservice.oditty.me/api/v0/search?q="+searchText+"&count=10&skip="+skip;
         String tag_json_obj = "json_obj_req";
+        footer.setVisibility(View.VISIBLE);
+        loading = true;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
                 url, null,
@@ -190,12 +234,14 @@ public class SpacesListActivity extends Activity {
                         for (int i=0;i<len;i++){
                             try {
                                 SearchItemModel searchItemModel = handleSearchItemType(response.getJSONObject(i));
-                                list.add(searchItemModel);
-                                searchAdapter.notifyDataSetChanged();
+                                searchItemModelsList.add(searchItemModel);
+                                searchRecyclerAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
+                        loading = false;
+                        footer.setVisibility(View.GONE);
                         Log.d(TAG, response.toString());
                     }
                 }, new Response.ErrorListener() {
@@ -209,7 +255,7 @@ public class SpacesListActivity extends Activity {
 
         // Adding request to request queue
         AsyncContent.getInstance().addToRequestQueue(jsonArrayRequest, tag_json_obj);
-        return list;
+        return searchItemModelsList;
     }
 
     private ArrayList<SearchItemModel> getTopSearchResults(){
@@ -227,7 +273,7 @@ public class SpacesListActivity extends Activity {
                             try {
                                 SearchItemModel searchItemModel = handleSearchItemType(response.getJSONObject(i));
                                 list.add(searchItemModel);
-                                searchAdapter.notifyDataSetChanged();
+                                searchRecyclerAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

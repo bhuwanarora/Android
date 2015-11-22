@@ -17,55 +17,60 @@
             app:rippleColor="@color/main_color_grey_400"
             app:rippleAlpha="0.6"
             app:rippleDuration="350">
-            <LinearLayout
-                android:id="@+id/lvis_search_item"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center_vertical"
-                android:minHeight="?android:attr/listPreferredItemHeight"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:id="@+id/lvis_photo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:contentDescription="@string/cd_main_image"
-                    android:scaleType="centerCrop"
-                    android:layout_marginRight="10dp" />
-
+                android:id="@+id/cv"
+                android:background="#fff">
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <com.csform.android.uiapptemplate.font.RobotoTextView
-                        android:id="@+id/lvis_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="6dp"
-                        android:paddingLeft="0dp"
-                        android:text="Jane Smith"
-                        android:textColor="@color/main_color_grey_700"
-                        android:textSize="22sp"
-                        app:typeface="robotoRegular"
-                        android:fontFamily="@string/typography1" />
+                    android:id="@+id/lvis_search_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="?android:attr/listPreferredItemHeight"
+                    android:orientation="horizontal" >
 
-                    <com.csform.android.uiapptemplate.font.RobotoTextView
-                        android:id="@+id/lvis_type"
+                    <ImageView
+                        android:id="@+id/lvis_photo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/cd_main_image"
+                        android:scaleType="centerCrop"
+                        android:layout_marginRight="10dp" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="6dp"
-                        android:paddingLeft="0dp"
-                        android:text="Type"
-                        android:textColor="@color/main_color_grey_700"
-                        android:textSize="14sp"
-                        app:typeface="robotoRegular" />
+                        android:layout_height="wrap_content">
+                        <com.csform.android.uiapptemplate.font.RobotoTextView
+                            android:id="@+id/lvis_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:paddingLeft="0dp"
+                            android:text="Jane Smith"
+                            android:textColor="@color/main_color_grey_700"
+                            android:textSize="22sp"
+                            app:typeface="robotoRegular"
+                            android:fontFamily="@string/typography1" />
+
+                        <com.csform.android.uiapptemplate.font.RobotoTextView
+                            android:id="@+id/lvis_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:paddingLeft="0dp"
+                            android:text="Type"
+                            android:textColor="@color/main_color_grey_700"
+                            android:textSize="14sp"
+                            app:typeface="robotoRegular" />
+                    </LinearLayout>
+
                 </LinearLayout>
-
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
         </com.csform.android.uiapptemplate.view.MaterialRippleLayout>
     </LinearLayout>
-
 </LinearLayout><!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/layout/list_view_item_search.xml -->
