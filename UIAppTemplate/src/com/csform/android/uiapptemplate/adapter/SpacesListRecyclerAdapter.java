@@ -8,13 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.NewsArticleActivity;
-import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
-
 import com.csform.android.uiapptemplate.model.NewsModel;
 
 import java.util.ArrayList;

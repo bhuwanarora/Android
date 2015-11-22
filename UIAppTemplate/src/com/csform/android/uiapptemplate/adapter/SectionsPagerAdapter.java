@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
-import com.csform.android.uiapptemplate.fragment.PlaceholderFragment;
 import com.csform.android.uiapptemplate.fragment.SpacesNewsFragment;
 import com.csform.android.uiapptemplate.fragment.SpacesVideosFragment;
 

@@ -2,7 +2,6 @@ package com.csform.android.uiapptemplate.adapter;
 
 import android.content.Context;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.model.NewsModel;
-import com.csform.android.uiapptemplate.model.SpacesModel;
 import com.nhaarman.listviewanimations.util.Swappable;
-
-import java.util.ArrayList;
 
 /**
  * Created by bhuwan on 21/11/15.

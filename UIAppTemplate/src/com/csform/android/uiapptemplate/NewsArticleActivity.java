@@ -1,46 +1,23 @@
 package com.csform.android.uiapptemplate;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.csform.android.uiapptemplate.adapter.DefaultAdapter;
 import com.csform.android.uiapptemplate.adapter.NewsArticleAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.util.AsyncContent;
-import com.csform.android.uiapptemplate.util.DummyContent;
-import com.csform.android.uiapptemplate.util.NewsArticleContent;
-import com.csform.android.uiapptemplate.view.AlphaForegroundColorSpan;
-import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,7 +43,7 @@ public class NewsArticleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
-        String url = intent.getStringExtra(SpacesAdapter.EXTRA_MESSAGE);
+        String url = intent.getStringExtra(SpacesListRecyclerAdapter.EXTRA_MESSAGE);
         Log.v(TAG, "onCreate " + url);
         setContentView(R.layout.news_article_activity);
         textView = (TextView) findViewById(R.id.news_article);

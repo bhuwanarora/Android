@@ -29,70 +29,12 @@
             android:name=".SpacesMainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ParallaxKenBurnsActivity"
-            android:theme="@style/AppTheme.Overlay" />
-        <activity android:name=".ParallaxActivity" />
-        <activity android:name=".ParallaxTravelActivity" />
-        <activity android:name=".ParallaxSocialActivity" />
-        <activity
-            android:name=".ImageGalleryCategoryActivity"
-            android:theme="@style/AppTheme.NoShadow" />
-        <activity
-            android:name=".ImageGallerySubcategoryActivity"
-            android:theme="@style/AppTheme.NoShadow" />
-        <activity
-            android:name=".SpacesParallaxActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".NewsArticleActivity"
             android:theme="@style/AppTheme.NoShadow"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SpacesActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".SpacesListActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".HomePageActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".RegisterPageActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".SplashScreensActivity" />
-        <activity android:name=".ListViewsActivity" />
-        <activity
-            android:name=".LeftMenusActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LeftMenusTravelActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LeftMenusSocialActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <!--<activity-->
-            <!--android:name=".LeftMenusMediaActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
-        <!--<activity-->
-            <!--android:name=".LeftMenusShoppingActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
-        <!--<activity-->
-            <!--android:name=".LeftMenusNewsActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
-        <activity android:name=".SearchBarsActivity" />
-        <activity android:name=".CategoriesListViewActivity" />
-        <activity android:name=".DragAndDropTravelAndSocialActivity" />
-        <activity android:name=".SwipToDissmissListViewActivity" />
-        <activity android:name=".GoogleCardsActivity" />
-        <activity android:name=".GoogleCardsTravelActivity" />
-        <activity android:name=".GoogleCardsSocialActivity" />
-        <activity android:name=".ExpandableListViewActivity" />
-        <activity android:name=".ExpandableTravelListViewActivity" />
-        <activity android:name=".ExpandableSocialListViewActivity" />
-        <activity android:name=".StickyListHeadersActivity" />
     </application>
 
 </manifest>

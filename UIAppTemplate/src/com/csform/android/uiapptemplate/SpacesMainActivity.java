@@ -7,18 +7,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.csform.android.uiapptemplate.adapter.SectionsPagerAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import org.json.JSONException;
 import org.json.JSONObject;

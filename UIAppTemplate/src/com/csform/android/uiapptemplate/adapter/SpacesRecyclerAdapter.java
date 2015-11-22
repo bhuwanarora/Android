@@ -9,16 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
-
 import com.csform.android.uiapptemplate.SpacesMainActivity;
 import com.csform.android.uiapptemplate.model.SpacesModel;
-import com.csform.android.uiapptemplate.util.CustomOnClickListener;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 
 import org.json.JSONException;

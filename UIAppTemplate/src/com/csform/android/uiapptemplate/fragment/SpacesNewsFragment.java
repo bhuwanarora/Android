@@ -1,6 +1,5 @@
 package com.csform.android.uiapptemplate.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,7 +23,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.YearAdapter;
@@ -37,7 +35,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class SpacesNewsFragment extends Fragment implements OnItemClickListener {
     public static final String TAG = SpacesNewsFragment.class.toString();

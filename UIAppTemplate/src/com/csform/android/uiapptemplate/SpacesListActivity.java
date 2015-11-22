@@ -7,20 +7,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.Space;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -28,21 +22,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.csform.android.uiapptemplate.adapter.SearchAdapter;
 import com.csform.android.uiapptemplate.adapter.SearchRecyclerAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
-import com.csform.android.uiapptemplate.model.DummyModel;
 import com.csform.android.uiapptemplate.model.SearchItemAuthorModel;
 import com.csform.android.uiapptemplate.model.SearchItemBookModel;
 import com.csform.android.uiapptemplate.model.SearchItemModel;
 import com.csform.android.uiapptemplate.model.SearchItemNewsModel;
 import com.csform.android.uiapptemplate.model.SearchItemSpacesModel;
 import com.csform.android.uiapptemplate.model.SpacesModel;
-import com.csform.android.uiapptemplate.util.AppContent;
 import com.csform.android.uiapptemplate.util.AsyncContent;
-import com.csform.android.uiapptemplate.util.DummyContent;
 import com.nhaarman.listviewanimations.appearance.AnimationAdapter;
 import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
@@ -62,7 +50,6 @@ public class SpacesListActivity extends Activity {
     private static BaseAdapter adapter;
     private static  SpacesRecyclerAdapter spacesRecyclerAdapter;
     private static SearchRecyclerAdapter searchRecyclerAdapter;
-    private static SearchAdapter searchAdapter;
     private static int pastVisiblesItems, visibleItemCount, totalItemCount;
     private static LinearLayoutManager linearLayoutManager;
     private static boolean loading = false;
@@ -154,13 +141,6 @@ public class SpacesListActivity extends Activity {
                 }
             }
         });
-    }
-
-    private void setUpSearchItemListView(){
-        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
-
-        animAdapter.setAbsListView(mDynamicListView);
-        mDynamicListView.setAdapter(searchAdapter);
     }
 
     private void bindSearchTextChangedListener(){

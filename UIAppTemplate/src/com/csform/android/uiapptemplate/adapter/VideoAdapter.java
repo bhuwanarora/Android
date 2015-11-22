@@ -12,17 +12,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.csform.android.uiapptemplate.NewsArticleActivity;
-import com.csform.android.uiapptemplate.ParallaxKenBurnsActivity;
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.model.NewsModel;
 import com.csform.android.uiapptemplate.model.VideoModel;
 import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.nhaarman.listviewanimations.util.Swappable;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.Collections;

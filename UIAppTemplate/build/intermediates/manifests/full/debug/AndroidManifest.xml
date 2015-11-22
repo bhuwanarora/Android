@@ -32,70 +32,12 @@
             android:name="com.csform.android.uiapptemplate.SpacesMainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.csform.android.uiapptemplate.ParallaxKenBurnsActivity"
-            android:theme="@style/AppTheme.Overlay" />
-        <activity android:name="com.csform.android.uiapptemplate.ParallaxActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ParallaxTravelActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ParallaxSocialActivity" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.ImageGalleryCategoryActivity"
-            android:theme="@style/AppTheme.NoShadow" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.ImageGallerySubcategoryActivity"
-            android:theme="@style/AppTheme.NoShadow" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.SpacesParallaxActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.csform.android.uiapptemplate.NewsArticleActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoShadow" />
         <activity
-            android:name="com.csform.android.uiapptemplate.SpacesActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.csform.android.uiapptemplate.SpacesListActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.HomePageActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.RegisterPageActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name="com.csform.android.uiapptemplate.SplashScreensActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ListViewsActivity" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusTravelActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.csform.android.uiapptemplate.LeftMenusSocialActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <!-- <activity -->
-        <!-- android:name=".LeftMenusMediaActivity" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LeftMenusShoppingActivity" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <!-- <activity -->
-        <!-- android:name=".LeftMenusNewsActivity" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <activity android:name="com.csform.android.uiapptemplate.SearchBarsActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.CategoriesListViewActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.DragAndDropTravelAndSocialActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.SwipToDissmissListViewActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.GoogleCardsActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.GoogleCardsTravelActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.GoogleCardsSocialActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ExpandableListViewActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ExpandableTravelListViewActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.ExpandableSocialListViewActivity" />
-        <activity android:name="com.csform.android.uiapptemplate.StickyListHeadersActivity" />
     </application>
 
 </manifest>

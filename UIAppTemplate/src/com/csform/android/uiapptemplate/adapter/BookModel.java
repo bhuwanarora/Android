@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.adapter;
 
-import android.text.format.Time;
-
 import com.csform.android.uiapptemplate.model.ContentModel;
 
 import java.util.Date;

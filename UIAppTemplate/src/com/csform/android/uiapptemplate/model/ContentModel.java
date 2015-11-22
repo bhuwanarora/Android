@@ -1,7 +1,5 @@
 package com.csform.android.uiapptemplate.model;
 
-import com.csform.android.uiapptemplate.R;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
