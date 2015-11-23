@@ -23,8 +23,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.R;
+import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesNewsRecyclerAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.YearAdapter;
 import com.csform.android.uiapptemplate.model.NewsModel;
 import com.csform.android.uiapptemplate.util.AsyncContent;
@@ -53,6 +53,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
     private static SpacesNewsRecyclerAdapter spacesNewsRecyclerAdapter;
     private static ProgressBar progressBar;
     private static View view;
+    private String name;
     private Boolean isStarted = false;
     private Boolean isVisible = false;
 
@@ -85,9 +86,9 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
         super.onCreateView(inflater, container, savedInstanceState);
         Intent intent = getActivity().getIntent();
         try {
-            JSONObject params = new JSONObject(intent.getStringExtra(SpacesRecyclerAdapter.EXTRA_MESSAGE));
+            JSONObject params = new JSONObject(intent.getStringExtra(SpacesListRecyclerAdapter.EXTRA_MESSAGE));
             String image_url = (String) params.get("image_url");
-            String name = (String) params.get("name");
+            name = (String) params.get("name");
             spacesId = (String) params.get("id");
             setViewLayout(inflater, R.layout.fragment_spaces_news, container);
             progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
@@ -173,13 +174,13 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
 
     private void setNewsModelRecycleAdapter(){
         newsModelList = getNewsModelList(String.valueOf(spacesId), YearAdapter.endYear);
-        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList);
+        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList, name);
         recyclerView.setAdapter(spacesNewsRecyclerAdapter);
     }
 
     private void setNewsModelRecycleAdapter(int year){
         newsModelList = getNewsModelList(String.valueOf(spacesId), year);
-        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList);
+        spacesNewsRecyclerAdapter = new SpacesNewsRecyclerAdapter(getActivity(), newsModelList, name);
         recyclerView.setAdapter(spacesNewsRecyclerAdapter);
     }
 

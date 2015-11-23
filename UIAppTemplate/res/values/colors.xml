@@ -7,19 +7,19 @@
 
     <color name="divider_color">@color/main_color_500</color>
 
-    <color name="main_color_500">@color/material_light_green_500</color>
-    <color name="main_color_50">@color/material_light_green_50</color>
-    <color name="main_color_100">@color/material_light_green_100</color>
-    <color name="main_color_200">@color/material_light_green_200</color>
-    <color name="main_color_300">@color/material_light_green_300</color>
-    <color name="main_color_400">@color/material_light_green_400</color>
-    <color name="main_color_600">@color/material_light_green_600</color>
-    <color name="main_color_700">@color/material_light_green_700</color>
-    <color name="main_color_800">@color/material_light_green_800</color>
-    <color name="main_color_900">@color/material_light_green_900</color>
-    <color name="main_color_A100">@color/material_light_yellow_A100</color>
-    <color name="main_color_A200">@color/material_light_yellow_A200</color>
-    <color name="main_color_A400">@color/material_light_yellow_A400</color>
+    <color name="main_color_500">@color/material_pink_500</color>
+    <color name="main_color_50">@color/material_pink_50</color>
+    <color name="main_color_100">@color/material_pink_100</color>
+    <color name="main_color_200">@color/material_pink_200</color>
+    <color name="main_color_300">@color/material_pink_300</color>
+    <color name="main_color_400">@color/material_pink_400</color>
+    <color name="main_color_600">@color/material_pink_600</color>
+    <color name="main_color_700">@color/material_pink_700</color>
+    <color name="main_color_800">@color/material_pink_800</color>
+    <color name="main_color_900">@color/material_pink_900</color>
+    <color name="main_color_A100">@color/material_grey_400</color>
+    <color name="main_color_A200">@color/material_grey_500</color>
+    <color name="main_color_A400">@color/material_grey_700</color>
 
     <color name="main_color_grey_500">@color/material_grey_500</color>
     <color name="main_color_grey_50">@color/material_grey_50</color>
@@ -35,15 +35,15 @@
 
     <!-- PLEASE NOTE: Since adding transparency to already
     defined colors is not supported through xml, we have
-    to add them manually. This means: we have used light_green
-    color scheme, and this is where we use light_green500 color
+    to add them manually. This means: we have used pink
+    color scheme, and this is where we use pink500 color
     to add transparency. If you were about to change color
-    scheme, also change light_green500 color from here. -->
-    <!-- 10 percent transparent light_green500 -->
+    scheme, also change pink500 color from here. -->
+    <!-- 10 percent transparent pink500 -->
     <color name="main_color_500_10_percent">#1a8f3e97</color>
-    <!-- 20 percent transparent light_green500 -->
+    <!-- 20 percent transparent pink500 -->
     <color name="main_color_500_20_percent">#338f3e97</color>
-    <!-- 50 percent transparent light_green500 -->
+    <!-- 50 percent transparent pink500 -->
     <color name="main_color_500_50_percent">#808f3e97</color>
     <!-- Ex. If you use red color scheme, write down (#ef4437 is Red500 color):
     <color name="main_color_500_10_percent">#1aef4437</color>

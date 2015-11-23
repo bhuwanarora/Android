@@ -17,6 +17,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private static final String TAG = "SectionsPagerAdapter";
     private static final int NEWS = 0;
     private static final int VIDEOS = 1;
+    private static final int BOOKS = 2;
+    private static final int USERS = 3;
 
     public SectionsPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -27,17 +29,19 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
         Log.v(TAG, " getItem "+position);
-        if(position == NEWS){
-            return SpacesNewsFragment.newInstance();
-        }
-        else{
-            return SpacesVideosFragment.newInstance();
+        switch (position){
+            case NEWS:
+                return SpacesNewsFragment.newInstance();
+            case VIDEOS:
+                return SpacesVideosFragment.newInstance();
+            default:
+                return null;
         }
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return 4;
     }
 
     @Override
@@ -47,6 +51,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "News";
             case VIDEOS:
                 return "Videos";
+            case BOOKS:
+                return "Books";
+            case USERS:
+                return "Members";
         }
         return null;
     }

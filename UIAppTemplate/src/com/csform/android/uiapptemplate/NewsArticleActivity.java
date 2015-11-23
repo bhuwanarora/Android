@@ -42,15 +42,23 @@ public class NewsArticleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Intent intent = getIntent();
-        String url = intent.getStringExtra(SpacesNewsRecyclerAdapter.EXTRA_MESSAGE);
-        Log.v(TAG, "onCreate " + url);
-        setContentView(R.layout.news_article_activity);
-        textView = (TextView) findViewById(R.id.news_article);
-        textViewTitle = (TextView) findViewById(R.id.news_article_title);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        getArticle(url);
+        try {
+            Intent intent = getIntent();
+            JSONObject params = new JSONObject(intent.getStringExtra(SpacesNewsRecyclerAdapter.EXTRA_MESSAGE));
+            String url = (String) params.get("url");
+            String spacesName = (String) params.get("spacesName");
+            getSupportActionBar().setTitle(spacesName);
+            Log.v(TAG, "onCreate " + url);
+            setContentView(R.layout.news_article_activity);
+            textView = (TextView) findViewById(R.id.news_article);
+            textViewTitle = (TextView) findViewById(R.id.news_article_title);
+            progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+            getArticle(url);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getArticle(String url){

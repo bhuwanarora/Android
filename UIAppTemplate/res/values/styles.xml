@@ -84,7 +84,7 @@
     <style name="RippleStyle">
         <item name="rippleOverlay">true</item>
         <item name="rippleColor">@color/main_color_grey_300</item>
-        <item name="rippleAlpha">0.7</item>
+        <item name="rippleAlpha">0.2</item>
         <item name="rippleDimension">45dp</item>
         <item name="rippleHover">true</item>
         <item name="rippleDuration">200</item>
@@ -141,5 +141,18 @@
 	<style name="travelRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:minHeight">16dp</item>
         <item name="android:maxHeight">16dp</item>
+    </style>
+
+
+    <!-- Custom TabLayout-->
+    <style name="SpacesTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/SpacesTabText</item>
+        <item name="android:background">@color/white</item>
+        <item name="tabSelectedTextColor">@color/material_grey_700</item>
+    </style>
+
+    <style name="SpacesTabText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/material_grey_400</item>
     </style>
 </resources>

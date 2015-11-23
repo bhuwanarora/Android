@@ -20,6 +20,7 @@ android/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidato
 android/support/v7/widget/RecyclerView$AdapterDataObservable.class
 android/support/annotation/RequiresPermission.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
+com/csform/android/uiapptemplate/adapter/SpacesListRecyclerAdapter.class
 android/support/v4/app/FragmentManagerImpl$3.class
 android/support/design/widget/AppBarLayout.class
 android/support/v4/os/TraceCompat.class
@@ -196,7 +197,6 @@ android/support/v4/app/FragmentManagerState.class
 android/support/v4/view/animation/FastOutSlowInInterpolator.class
 com/csform/android/uiapptemplate/SpacesListActivity$7.class
     void attachBaseContext(android.content.Context);
-com/csform/android/uiapptemplate/adapter/SpacesRecyclerAdapter.class
 android/support/v7/recyclerview/R.class
 android/support/v7/appcompat/R$style.class
 android/support/v4/app/FragmentManagerImpl$FragmentTag.class

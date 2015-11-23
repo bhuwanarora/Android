@@ -25,28 +25,28 @@ import java.util.ArrayList;
 /**
  * Created by bhuwan on 20/11/15.
  */
-public class SpacesRecyclerAdapter extends RecyclerView.Adapter<SpacesRecyclerAdapter.SpacesViewHolder> {
+public class SpacesListRecyclerAdapter extends RecyclerView.Adapter<SpacesListRecyclerAdapter.SpacesViewHolder> {
 
     private Context mContext;
 
     private ArrayList<SpacesModel> spacesModels;
-    public static final String TAG = "SpacesRecyclerAdapter";
+    public static final String TAG = "SListRecyclerAdapter";
     public static String EXTRA_MESSAGE = "com.csform.android.uiapptemplate.MESSAGE";
 
-    public SpacesRecyclerAdapter(Context context, ArrayList<SpacesModel> spacesModels){
+    public SpacesListRecyclerAdapter(Context context, ArrayList<SpacesModel> spacesModels){
         this.mContext = context;
         this.spacesModels = spacesModels;
     }
 
     @Override
-    public SpacesRecyclerAdapter.SpacesViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public SpacesListRecyclerAdapter.SpacesViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_spaces, viewGroup, false);
         SpacesViewHolder spacesViewHolder = new SpacesViewHolder(view);
         return spacesViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(SpacesRecyclerAdapter.SpacesViewHolder spacesViewHolder, int position) {
+    public void onBindViewHolder(SpacesListRecyclerAdapter.SpacesViewHolder spacesViewHolder, int position) {
         try {
             SpacesModel spacesModel = spacesModels.get(position);
 

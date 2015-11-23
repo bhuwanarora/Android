@@ -9,5 +9,5 @@
     <dimen name="drawer_width_news">96dp</dimen>
     <dimen name="ken_burns_header">250dp</dimen>
     <dimen name="cpb_stroke_width">4dp</dimen>
-
+    <dimen name="base_margin">4dp</dimen>
 </resources>

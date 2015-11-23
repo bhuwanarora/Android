@@ -8,11 +8,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.NewsArticleActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.model.NewsModel;
+import com.csform.android.uiapptemplate.util.ImageUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -22,32 +27,42 @@ import java.util.ArrayList;
 public class SpacesNewsRecyclerAdapter extends RecyclerView.Adapter<SpacesNewsRecyclerAdapter.NewsViewHolder> {
 
 
-    ArrayList<NewsModel> newsModels;
-    Context mContext;
+    private static ArrayList<NewsModel> newsModels;
+    private Context mContext;
+    private String mSpacesName;
     public static final String TAG = "SListRecyclerAdapter";
     public static String EXTRA_MESSAGE = "com.csform.android.uiapptemplate.MESSAGE";
 
-    public SpacesNewsRecyclerAdapter(Context context, ArrayList<NewsModel> newsModels){
+    public SpacesNewsRecyclerAdapter(Context context, ArrayList<NewsModel> newsModels, String spacesName){
         this.newsModels = newsModels;
         this.mContext = context;
+        this.mSpacesName = spacesName;
     }
 
     @Override
     public SpacesNewsRecyclerAdapter.NewsViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_parallax_social, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_spaces_news, viewGroup, false);
         NewsViewHolder newsViewHolder = new NewsViewHolder(view);
         return newsViewHolder;
     }
 
     @Override
     public void onBindViewHolder(SpacesNewsRecyclerAdapter.NewsViewHolder newsViewHolder, int position) {
-        NewsModel newsModel = newsModels.get(position);
-        newsViewHolder.title.setText(newsModel.getTitle());
-        newsViewHolder.createdOn.setText(newsModel.getCreatedOn());
-        newsViewHolder.description.setText(newsModel.getDescription());
+        try {
+            NewsModel newsModel = newsModels.get(position);
+            newsViewHolder.title.setText(newsModel.getTitle());
+            newsViewHolder.createdOn.setText(newsModel.getCreatedOn());
+            newsViewHolder.description.setText(newsModel.getDescription());
+            ImageUtil.displayImage(newsViewHolder.photo, newsModel.getImageURL(), null);
+            JSONObject params = new JSONObject();
+            params.put("url", newsModel.getUrl());
+            params.put("spacesName", this.mSpacesName);
 
-        newsViewHolder.title.setTag(newsModel.getUrl());
-        newsViewHolder.title.setOnClickListener(clickListener);
+            newsViewHolder.title.setTag(params.toString());
+            newsViewHolder.title.setOnClickListener(clickListener);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -77,6 +92,7 @@ public class SpacesNewsRecyclerAdapter extends RecyclerView.Adapter<SpacesNewsRe
         public TextView title;
         public TextView createdOn;
         public TextView description;
+        public ImageView photo;
 
         NewsViewHolder(View itemView) {
             super(itemView);
@@ -84,6 +100,7 @@ public class SpacesNewsRecyclerAdapter extends RecyclerView.Adapter<SpacesNewsRe
             title = (TextView) itemView.findViewById(R.id.lvis_title);
             createdOn = (TextView) itemView.findViewById(R.id.lvis_created_on);
             description = (TextView) itemView.findViewById(R.id.lvis_description);
+            photo = (ImageView) itemView.findViewById(R.id.lvis_photo);
         }
     }
 }

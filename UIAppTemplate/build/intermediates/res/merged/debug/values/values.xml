@@ -100,22 +100,22 @@
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/values/colors.xml -->
     <eat-comment/>
-    <color name="main_color_100">@color/material_light_green_100</color>
-    <color name="main_color_200">@color/material_light_green_200</color>
-    <color name="main_color_300">@color/material_light_green_300</color>
-    <color name="main_color_400">@color/material_light_green_400</color>
-    <color name="main_color_50">@color/material_light_green_50</color>
-    <color name="main_color_500">@color/material_light_green_500</color>
+    <color name="main_color_100">@color/material_pink_100</color>
+    <color name="main_color_200">@color/material_pink_200</color>
+    <color name="main_color_300">@color/material_pink_300</color>
+    <color name="main_color_400">@color/material_pink_400</color>
+    <color name="main_color_50">@color/material_pink_50</color>
+    <color name="main_color_500">@color/material_pink_500</color>
     <color name="main_color_500_10_percent">#1a8f3e97</color>
     <color name="main_color_500_20_percent">#338f3e97</color>
     <color name="main_color_500_50_percent">#808f3e97</color>
-    <color name="main_color_600">@color/material_light_green_600</color>
-    <color name="main_color_700">@color/material_light_green_700</color>
-    <color name="main_color_800">@color/material_light_green_800</color>
-    <color name="main_color_900">@color/material_light_green_900</color>
-    <color name="main_color_A100">@color/material_light_yellow_A100</color>
-    <color name="main_color_A200">@color/material_light_yellow_A200</color>
-    <color name="main_color_A400">@color/material_light_yellow_A400</color>
+    <color name="main_color_600">@color/material_pink_600</color>
+    <color name="main_color_700">@color/material_pink_700</color>
+    <color name="main_color_800">@color/material_pink_800</color>
+    <color name="main_color_900">@color/material_pink_900</color>
+    <color name="main_color_A100">@color/material_grey_400</color>
+    <color name="main_color_A200">@color/material_grey_500</color>
+    <color name="main_color_A400">@color/material_grey_700</color>
     <color name="main_color_grey_100">@color/material_grey_100</color>
     <color name="main_color_grey_200">@color/material_grey_200</color>
     <color name="main_color_grey_300">@color/material_grey_300</color>
@@ -545,6 +545,9 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="base_margin">4dp</dimen>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
@@ -718,7 +721,7 @@
     <string name="drawer_title_shape_image_views">Shape Image Views</string>
     <string name="drawer_title_splash_screens">Splash Screens</string>
     <string name="drawer_title_text_views">Text Views</string>
-    <string name="email">E-mail</string>
+    <string name="email">Enter your Email Address</string>
     <string name="error">ERROR</string>
     <string name="flat">FLAT</string>
     <string name="fontello_drag_and_drop"></string>
@@ -772,9 +775,10 @@
     <string name="material_icon_video"></string>
     <string name="new_york">New York</string>
     <string name="number_of_images">%d image(s)</string>
-    <string name="password">Password</string>
+    <string name="password">Enter your Password</string>
     <string name="raised">RAISED</string>
     <string name="register">REGISTER</string>
+    <string name="search_default">Search for Topics you like...</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="skip">SKIP</string>
     <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
@@ -2068,7 +2072,7 @@
     <style name="RippleStyle">
         <item name="rippleOverlay">true</item>
         <item name="rippleColor">@color/main_color_grey_300</item>
-        <item name="rippleAlpha">0.7</item>
+        <item name="rippleAlpha">0.2</item>
         <item name="rippleDimension">45dp</item>
         <item name="rippleHover">true</item>
         <item name="rippleDuration">200</item>
@@ -2126,6 +2130,19 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="SpacesTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/SpacesTabText</item>
+        <item name="android:background">@color/white</item>
+        <item name="tabSelectedTextColor">@color/material_grey_700</item>
+    </style>
+    <style name="SpacesTabText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/material_grey_400</item>
+    </style>
+    <!-- From: file:/Users/bhuwan/ReadersDoor/Android/android/oditty/UIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>

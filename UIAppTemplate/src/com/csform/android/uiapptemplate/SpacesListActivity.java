@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.adapter.SearchRecyclerAdapter;
-import com.csform.android.uiapptemplate.adapter.SpacesRecyclerAdapter;
+import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
 import com.csform.android.uiapptemplate.model.SearchItemAuthorModel;
 import com.csform.android.uiapptemplate.model.SearchItemBookModel;
 import com.csform.android.uiapptemplate.model.SearchItemModel;
@@ -46,7 +46,7 @@ public class SpacesListActivity extends Activity {
 
     private static DynamicListView mDynamicListView;
     private static BaseAdapter adapter;
-    private static  SpacesRecyclerAdapter spacesRecyclerAdapter;
+    private static SpacesListRecyclerAdapter spacesListRecyclerAdapter;
     private static SearchRecyclerAdapter searchRecyclerAdapter;
     private static int pastVisiblesItems, visibleItemCount, totalItemCount;
     private static LinearLayoutManager linearLayoutManager;
@@ -114,8 +114,8 @@ public class SpacesListActivity extends Activity {
     }
 
     private void setSpacesRecycleAdapter(){
-        spacesRecyclerAdapter = new SpacesRecyclerAdapter(SpacesListActivity.this, getSpacesModelList());
-        recyclerView.setAdapter(spacesRecyclerAdapter);
+        spacesListRecyclerAdapter = new SpacesListRecyclerAdapter(SpacesListActivity.this, getSpacesModelList());
+        recyclerView.setAdapter(spacesListRecyclerAdapter);
     }
 
     private void bindScrollListeners(){
@@ -293,7 +293,7 @@ public class SpacesListActivity extends Activity {
                                 SpacesModel spacesModel = new SpacesModel(id, image_url, name, view_count, R.string.fontello_heart_empty);
                                 spacesModelsList.add(spacesModel);
 //                                adapter.notifyDataSetChanged();
-                                spacesRecyclerAdapter.notifyDataSetChanged();
+                                spacesListRecyclerAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
