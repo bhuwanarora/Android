@@ -51,7 +51,7 @@ public class SpacesNewsRecyclerAdapter extends RecyclerView.Adapter<SpacesNewsRe
         try {
             NewsModel newsModel = newsModels.get(position);
             newsViewHolder.title.setText(newsModel.getTitle());
-            newsViewHolder.createdOn.setText(newsModel.getCreatedOn());
+            newsViewHolder.createdOn.setText((String) newsModel.getCreatedOn());
             newsViewHolder.description.setText(newsModel.getDescription());
             ImageUtil.displayImage(newsViewHolder.photo, newsModel.getImageURL(), null);
             JSONObject params = new JSONObject();

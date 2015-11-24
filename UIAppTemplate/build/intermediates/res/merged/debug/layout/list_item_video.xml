@@ -11,10 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        app:rippleColor="@color/main_color_grey_400"
-        app:rippleAlpha="0.6"
-        android:background="@drawable/border"
-        app:rippleDuration="350">
+        android:background="@drawable/border">
         <LinearLayout
             android:id="@+id/lvis_video_item"
             android:layout_width="match_parent"

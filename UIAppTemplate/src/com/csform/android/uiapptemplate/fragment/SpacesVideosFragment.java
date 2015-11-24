@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -37,16 +38,7 @@ public class SpacesVideosFragment extends Fragment {
     public static final String TAG = SpacesVideosFragment.class.toString();
     private static String spacesId;
 
-    private YearAdapter yearAdapter;
-    private static LinearLayout yearGallery = null;
-
     private ListView listView;
-    private TypedValue mTypedValue = new TypedValue();
-    private ViewPager mViewPager;
-    private static int pastVisiblesItems, visibleItemCount, totalItemCount;
-    private static LinearLayoutManager linearLayoutManager;
-    private static boolean loading = false;
-    private static ArrayList<NewsModel> newsModelList = new ArrayList<NewsModel>();
     private static ProgressBar progressBar;
     private VideoAdapter videoAdapter;
     private Boolean isVisible = false;
@@ -62,6 +54,7 @@ public class SpacesVideosFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         isVisible = isVisibleToUser;
+        Log.v(TAG, "setUserVisibleHint");
         if (isStarted && isVisible) {
             setUpVideosList();
         }
@@ -71,6 +64,7 @@ public class SpacesVideosFragment extends Fragment {
     public void onStart() {
         super.onStart();
         isStarted = true;
+        Log.v(TAG, "onStart");
         if (isVisible && isStarted){
             setUpVideosList();
         }
@@ -82,7 +76,11 @@ public class SpacesVideosFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v(TAG, "onCreateView");
         super.onCreateView(inflater, container, savedInstanceState);
+
+        container.removeView(getView());
+
         Intent intent = getActivity().getIntent();
         try {
             JSONObject params = new JSONObject(intent.getStringExtra(SpacesNewsRecyclerAdapter.EXTRA_MESSAGE));
@@ -101,9 +99,8 @@ public class SpacesVideosFragment extends Fragment {
     }
 
     private void setViewLayout(LayoutInflater inflater, int id, ViewGroup container){
+        Log.v(TAG, " setViewLayout ");
         view = inflater.inflate(id, container, false);
-//        container.removeAllViews();
-        container.addView(view);
     }
 
     private void setUpVideosList(){
@@ -135,6 +132,7 @@ public class SpacesVideosFragment extends Fragment {
                                 list.add(videoModel);
                                 videoAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
+                                Toast.makeText(getActivity().getBaseContext(), "Error with Loading..", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
                         }

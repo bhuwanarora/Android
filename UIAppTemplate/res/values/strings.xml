@@ -130,6 +130,7 @@
     <string name="login">LOGIN</string>
     <string name="register">REGISTER</string>
     <string name="skip">SKIP</string>
+    <string name="explore">EXPLORE</string>
     <string name="raised">RAISED</string>
     <string name="flat">FLAT</string>
     <string name="search_default">Search for Topics you like...</string>

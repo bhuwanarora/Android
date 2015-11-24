@@ -8,6 +8,7 @@
         <item name="android:padding">9dp</item>
         <item name="typeface">robotoMedium</item>
         <item name="android:clickable">true</item>
+        <item name="colorControlNormal">@color/material_grey_700</item>
     </style>
     
     <style name="ButtonStyle.RaisedEmpty" parent="@style/ButtonStyle">

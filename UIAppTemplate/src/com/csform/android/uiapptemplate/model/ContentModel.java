@@ -2,6 +2,7 @@ package com.csform.android.uiapptemplate.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class ContentModel {
 
@@ -9,13 +10,13 @@ public class ContentModel {
     private String mImageURL;
     private String mTitle;
     private String mDescription;
-    private String mCreatedOn;
+    private Object mCreatedOn;
     private String mUrl;
     private int mIconRes;
     private int mViewCount;
     private String mType;
 
-    public ContentModel(long id, String imageURL, String title, String description, String createdOn, int viewCount, int iconRes, String url, String type){
+    public ContentModel(long id, String imageURL, String title, String description, Object createdOn, int viewCount, int iconRes, String url, String type){
         mId = id;
         mImageURL = imageURL;
         mTitle = title;
@@ -79,7 +80,7 @@ public class ContentModel {
         return mDescription;
     }
 
-    public String getCreatedOn() {
+    public Object getCreatedOn() {
         return mCreatedOn;
     }
 
@@ -99,8 +100,17 @@ public class ContentModel {
         this.mViewCount = mViewCount;
     }
 
-    private String handleDateFormat(String createdOn){
-        return new SimpleDateFormat("dd MMM, yyyy").format(new Date(Long.valueOf(createdOn).longValue() * 1000L));
+    private String handleDateFormat(Object createdOn){
+        try {
+            createdOn = new SimpleDateFormat("dd MMM, yyyy").format(new Date(Long.valueOf((String) createdOn).longValue() * 1000L));
+        }
+        catch (ClassCastException e){
+
+        }
+        catch (NumberFormatException e){
+
+        }
+        return (String) createdOn;
     }
 
     @Override

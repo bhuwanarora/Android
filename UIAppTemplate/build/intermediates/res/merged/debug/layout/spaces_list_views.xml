@@ -60,20 +60,26 @@
                     android:layout_height="48dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
-
-                    <Button
-                        android:layout_width="46dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/material_icon_go"
-                        android:visibility="gone"
-                        android:id="@+id/backButton"
-                        android:background="@color/main_color_600" />
+                    <com.csform.android.uiapptemplate.view.MaterialRippleLayout
+                        style="@style/RippleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_width="46dp"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:id="@+id/backButton"
+                            style="@style/ButtonStyle"
+                            android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+                            android:textColor="@color/main_color_800" />
+                    </com.csform.android.uiapptemplate.view.MaterialRippleLayout>
 
                     <com.csform.android.uiapptemplate.font.FontelloTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
+                        android:id="@+id/search_icon"
                         android:text="@string/fontello_search"
                         android:textColor="@color/main_color_800"
                         android:textSize="18dp"
@@ -88,27 +94,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/search_default"
-                        android:background="@drawable/edit_text_background_accent"
                         android:inputType="text"
-                        android:textColor="#fff"
                         android:nextFocusUp="@id/search_field"
                         android:nextFocusLeft="@id/search_field"
-                        android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
-                    <com.csform.android.uiapptemplate.font.FontelloTextView
-                        android:id="@+id/search_microfon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:text="@string/fontello_microfon"
-                        android:textColor="@color/main_color_800"
-                        android:textSize="18dp"
-                        tools:ignore="SpUsage" />
+                        android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent"
+                        android:layout_marginTop="4dp" />
                 </LinearLayout>
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/rv"/>
+                    android:id="@+id/rv" />
 
                 <!--<com.nhaarman.listviewanimations.itemmanipulation.DynamicListView-->
                     <!--android:id="@+id/dynamic_listview"-->

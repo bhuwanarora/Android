@@ -1,6 +1,11 @@
 package com.csform.android.uiapptemplate;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -9,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -18,9 +24,14 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.csform.android.uiapptemplate.adapter.NewsArticleAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesNewsRecyclerAdapter;
 import com.csform.android.uiapptemplate.util.AsyncContent;
+import com.csform.android.uiapptemplate.util.ImageUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * Please NOTE: In manifest, set theme for this class to
@@ -78,6 +89,7 @@ public class NewsArticleActivity extends AppCompatActivity {
                             textView.setText(Html.fromHtml(article[0]));
                             textViewTitle.setText(title);
                         } catch (JSONException e) {
+                            Toast.makeText(getBaseContext(), "Error with Loading..", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                         progressBar.setVisibility(View.GONE);
@@ -93,6 +105,54 @@ public class NewsArticleActivity extends AppCompatActivity {
         // Adding request to request queue
         AsyncContent.getInstance().addToRequestQueue(jsonObjectRequest, tag_json_obj);
         return article[0];
+    }
+
+    public Html.ImageGetter getImageGetter(){
+        Html.ImageGetter imgGetter=new Html.ImageGetter(){
+            public Drawable getDrawable(String source){
+                Drawable drawable = new Drawable() {
+                    @Override
+                    public void draw(Canvas canvas) {
+
+                    }
+
+                    @Override
+                    public void setAlpha(int alpha) {
+
+                    }
+
+                    @Override
+                    public void setColorFilter(ColorFilter colorFilter) {
+
+                    }
+
+                    @Override
+                    public int getOpacity() {
+                        return 0;
+                    }
+                };
+
+                try {
+                    URL url=new URL(source);
+                    InputStream is=url.openStream();
+                    drawable=Drawable.createFromStream(is,"");
+                    drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+//                    return new BitmapDrawable();
+                }
+                catch (        NullPointerException e) {
+//                    return new BitmapDrawable();
+                }
+//                Bitmap sb= ImageUtil.getScaledBitmap((RCApplication) getApplication(), ((BitmapDrawable) drawable).getBitmap());
+//                drawable=new BitmapDrawable(sb);
+//                drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+                return drawable;
+            }
+        }
+        ;
+        return imgGetter;
     }
 
     @Override

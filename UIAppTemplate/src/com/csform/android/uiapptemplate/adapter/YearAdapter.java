@@ -22,7 +22,7 @@ public class YearAdapter extends BaseAdapter {
 
     public YearAdapter(Context c){
         context = c;
-        for(int year=startYear; year <= endYear; year++){
+        for(int year=endYear; year >= startYear; year--){
             itemsArray.add(Integer.toString(year));
         }
     }

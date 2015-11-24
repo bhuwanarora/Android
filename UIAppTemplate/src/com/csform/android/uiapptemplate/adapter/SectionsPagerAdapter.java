@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
+import com.csform.android.uiapptemplate.fragment.SpacesBooksFragment;
 import com.csform.android.uiapptemplate.fragment.SpacesNewsFragment;
 import com.csform.android.uiapptemplate.fragment.SpacesVideosFragment;
 
@@ -34,6 +35,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return SpacesNewsFragment.newInstance();
             case VIDEOS:
                 return SpacesVideosFragment.newInstance();
+            case BOOKS:
+                return SpacesBooksFragment.newInstance();
             default:
                 return null;
         }
@@ -41,7 +44,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 
     @Override
@@ -53,8 +56,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "Videos";
             case BOOKS:
                 return "Books";
-            case USERS:
-                return "Members";
+//            case USERS:
+//                return "Members";
         }
         return null;
     }

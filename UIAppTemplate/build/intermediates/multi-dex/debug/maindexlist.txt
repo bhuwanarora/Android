@@ -6,6 +6,7 @@ android/support/annotation/RawRes.class
 com/android/volley/toolbox/JsonRequest.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
 android/support/v4/media/session/MediaSessionCompat$Token.class
+com/csform/android/uiapptemplate/font/FontelloTextView.class
 android/support/v4/view/ViewCompatGingerbread.class
 android/support/v7/app/AppCompatActivity.class
 android/support/annotation/LayoutRes.class
@@ -209,6 +210,7 @@ com/csform/android/uiapptemplate/SpacesListActivity$2.class
 android/support/v4/media/session/PlaybackStateCompat$Actions.class
 android/support/design/widget/SwipeDismissBehavior$OnDismissListener.class
 android/support/v4/view/ViewCompatJB.class
+com/csform/android/uiapptemplate/SpacesMainActivity$1.class
 android/support/v4/media/session/MediaSessionCompat.class
 android/support/annotation/FractionRes.class
 android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
@@ -348,6 +350,7 @@ android/support/design/widget/Snackbar$9.class
 android/support/v4/view/ViewCompatJellybeanMr1.class
 -keep class com.csform.android.uiapptemplate.util.AsyncContent {
 android/support/v7/widget/RecyclerView$OnScrollListener.class
+com/csform/android/uiapptemplate/NewsArticleActivity$3.class
 android/support/v7/widget/RecyclerView$ViewHolder.class
 android/support/v7/appcompat/R$styleable.class
 android/support/v7/widget/LinearLayoutManager.class

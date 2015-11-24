@@ -1,5 +1,6 @@
 package com.csform.android.uiapptemplate.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -62,6 +64,15 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
     }
 
     @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        newsModelList = new ArrayList<NewsModel>();
+        if(spacesNewsRecyclerAdapter != null){
+            spacesNewsRecyclerAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         Log.v(TAG, "setUserVisibleHint setUserVisibleHint "+isVisibleToUser + " isStarted "+isStarted);
@@ -83,7 +94,10 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v(TAG, "onCreateView");
         super.onCreateView(inflater, container, savedInstanceState);
+        container.removeView(getView());
+
         Intent intent = getActivity().getIntent();
         try {
             JSONObject params = new JSONObject(intent.getStringExtra(SpacesListRecyclerAdapter.EXTRA_MESSAGE));
@@ -106,7 +120,6 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
 
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
-//        setNewsModelRecycleAdapter();
         bindScrollListeners();
     }
 
@@ -136,9 +149,8 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
     }
 
     private void setViewLayout(LayoutInflater inflater, int id, ViewGroup container){
+        Log.v(TAG, "setViewLayout");
         view = inflater.inflate(id, container, false);
-        container.removeAllViews();
-        container.addView(view);
     }
 
     private void handleYearSlider(){
@@ -199,7 +211,7 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
                     @Override
                     public void onResponse(JSONArray response) {
                         try {
-                            if(response.toString().equals("{}")){
+                            if(response.getJSONObject(0).toString().equals("{}") || (response.length() == 0)){
                                 NewsModel newsModel = NewsModel.getEmptyNewsModel();
                                 newsModelList.add(newsModel);
                                 spacesNewsRecyclerAdapter.notifyDataSetChanged();
@@ -225,13 +237,14 @@ public class SpacesNewsFragment extends Fragment implements OnItemClickListener 
                                         Log.v(TAG, "getNewsModelList " + newsModelList.size());
                                         spacesNewsRecyclerAdapter.notifyDataSetChanged();
                                     } catch (JSONException e) {
+                                        Toast.makeText(getActivity().getBaseContext(), "Error with Loading..", Toast.LENGTH_SHORT).show();
                                         e.printStackTrace();
                                     }
                                 }
                                 loading = false;
-                                progressBar.setVisibility(View.INVISIBLE);
                                 Log.d(TAG, response.toString());
                             }
+                            progressBar.setVisibility(View.INVISIBLE);
                         }
                         catch (JSONException e){
                             e.printStackTrace();

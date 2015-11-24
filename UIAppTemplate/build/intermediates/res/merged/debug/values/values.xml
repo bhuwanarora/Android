@@ -723,6 +723,7 @@
     <string name="drawer_title_text_views">Text Views</string>
     <string name="email">Enter your Email Address</string>
     <string name="error">ERROR</string>
+    <string name="explore">EXPLORE</string>
     <string name="flat">FLAT</string>
     <string name="fontello_drag_and_drop"></string>
     <string name="fontello_heart_empty"></string>
@@ -1812,6 +1813,7 @@
         <item name="android:padding">9dp</item>
         <item name="typeface">robotoMedium</item>
         <item name="android:clickable">true</item>
+        <item name="colorControlNormal">@color/material_grey_700</item>
     </style>
     <style name="ButtonStyle.RaisedEmpty" parent="@style/ButtonStyle">
         <item name="android:background">@drawable/selector_background_empty</item>
@@ -2301,6 +2303,7 @@
     <style name="TextViewAppearance.Fontello.SearchBar" parent="@style/TextViewAppearance">
         <item name="typeface">robotoMedium</item>
         <item name="android:textSize">12sp</item>
+
         <item name="android:textColor">@color/main_color_grey_400</item>
     </style>
     <style name="TextViewAppearance.Headline1" parent="@style/TextViewAppearance">

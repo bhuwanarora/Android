@@ -88,7 +88,7 @@ public class VideoAdapter extends BaseAdapter implements Swappable,
         Log.v(TAG, " getView VideoModel " + dm);
         ImageUtil.displayImage(holder.photo, dm.getImageURL(), null);
         holder.title.setText(dm.getTitle());
-        holder.publishedDate.setText(dm.getCreatedOn());
+        holder.publishedDate.setText((String) dm.getCreatedOn());
         holder.duration.setText(String.valueOf(dm.getViewCount()/60) + " mins");
         holder.layout.setTag(dm.getUrl());
         holder.layout.setOnClickListener(this);

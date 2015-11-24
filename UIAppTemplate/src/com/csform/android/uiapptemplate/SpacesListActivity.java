@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -24,6 +25,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.csform.android.uiapptemplate.adapter.SearchRecyclerAdapter;
 import com.csform.android.uiapptemplate.adapter.SpacesListRecyclerAdapter;
+import com.csform.android.uiapptemplate.font.FontelloTextView;
 import com.csform.android.uiapptemplate.model.SearchItemAuthorModel;
 import com.csform.android.uiapptemplate.model.SearchItemBookModel;
 import com.csform.android.uiapptemplate.model.SearchItemModel;
@@ -59,6 +61,7 @@ public class SpacesListActivity extends Activity {
     private static ArrayList<SearchItemModel> searchItemModelsList = new ArrayList<SearchItemModel>();
     private static Button backButton;
     private static String searchText;
+    private static FontelloTextView searchIcon;
 
 //    @SuppressLint("NewApi")
     @Override
@@ -70,6 +73,7 @@ public class SpacesListActivity extends Activity {
 
         footer = (RelativeLayout) findViewById(R.id.footer);
         mSearchField = (EditText) findViewById(R.id.search_field);
+        searchIcon = (FontelloTextView) findViewById(R.id.search_icon);
         mSearchField.clearFocus();
         mSearchField.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +91,7 @@ public class SpacesListActivity extends Activity {
     private void setBackButtonVisible(){
         if(backButton.getVisibility() != View.VISIBLE){
             backButton.setVisibility(View.VISIBLE);
+            searchIcon.setVisibility(View.GONE);
         }
     }
 
@@ -98,6 +103,7 @@ public class SpacesListActivity extends Activity {
                 searchItemModelsList = new ArrayList<SearchItemModel>();
                 mSearchField.clearFocus();
                 backButton.setVisibility(View.GONE);
+                searchIcon.setVisibility(View.VISIBLE);
                 setSpacesRecycleAdapter();
             }
         });
@@ -289,12 +295,13 @@ public class SpacesListActivity extends Activity {
                                 String name = response.getJSONObject(i).getString("name");
                                 int view_count = response.getJSONObject(i).getInt("view_count");
                                 int id = response.getJSONObject(i).getInt("id");
-                                String image_url =  "http://rd-images.readersdoor.netdna-cdn.com/"+id+"/M.png";
+                                String image_url = response.getJSONObject(i).getString("image_url");
+//                                String image_url =  "http://rd-images.readersdoor.netdna-cdn.com/"+id+"/M.png";
                                 SpacesModel spacesModel = new SpacesModel(id, image_url, name, view_count, R.string.fontello_heart_empty);
                                 spacesModelsList.add(spacesModel);
-//                                adapter.notifyDataSetChanged();
                                 spacesListRecyclerAdapter.notifyDataSetChanged();
                             } catch (JSONException e) {
+                                Toast.makeText(getBaseContext(), "Error with Loading..", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
                         }

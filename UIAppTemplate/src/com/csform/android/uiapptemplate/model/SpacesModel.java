@@ -25,8 +25,8 @@ public class SpacesModel {
     }
 
     public String getImageURL() {
-//        return mImageURL;
-        return "https://oditty.me/assets/rooms.png";
+        return mImageURL;
+//        return "https://oditty.me/assets/rooms.png";
     }
 
     public String getName() {
